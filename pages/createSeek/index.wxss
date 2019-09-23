@@ -1,0 +1,71 @@
+/* pages/createSeek/index.wxss */
+page {
+  background-color: #f0f2f7;
+} 
+.text-darkGray{
+  font-weight: 600;
+}
+
+/* addSeekBottom */
+.addSeekBottom{
+  width:100%;
+  min-height: 290rpx;
+  margin-top:33rpx;
+  background:#fff;
+  padding:42rpx 30rpx 0;
+}
+.addSeekBottom .title{
+  font-size:28rpx;
+  font-weight: bold;
+  color:#000;
+  margin-bottom:30rpx;
+}
+.addSeekBottom .content{
+  font-size:24rpx;
+  line-height: 48rpx;
+}
+/* addSeekButton */
+.addSeekButton{
+  width:100%;
+  height:116rpx;
+  background:#fff;
+  box-shadow: 0 5rpx 20rpx #a46afb;
+  position: fixed;
+  bottom:0;
+  padding-top:20rpx;
+  box-sizing: border-box;
+}
+.addSeekButton .addSeekButton_btn{
+  width:640rpx;
+  height:80rpx;
+  border-radius: 100rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color:#fff;
+  font-size:34rpx;
+  font-weight: 500;
+  margin:0 auto;
+  background: -webkit-linear-gradient(left, #5a39e7 , #a66efb); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, #5a39e7, #a66efb); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, #5a39e7, #a66efb); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #5a39e7, #a66efb); /* 标准的语法 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

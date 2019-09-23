@@ -1,0 +1,14 @@
+/* pages/userInfo/index.wxss */
+.menu{
+  margin-top:30rpx;
+}
+.cu-list .cu-item{
+  min-height: 138rpx;
+}
+.cu-list .cu-item .cu-avatar{
+  width: 85rpx;
+  height:85rpx;
+}
+.cu-list .cu-item .content .text-black{
+  font-size: 30rpx;
+}

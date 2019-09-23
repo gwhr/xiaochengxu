@@ -1,0 +1,24 @@
+<!--pages/jungle/index.wxml-->
+<cu-custom class="nav-top" bgColor="bg-purple-gradual">
+  <view slot="content">打野</view>
+</cu-custom>
+<view class="container" bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd">
+  <!-- 下拉处的提示 -->
+  <view  wx:if="{{!showList}}" class="seekPull" style="padding-top:{{paddingTop}}rpx;">
+    <!-- 提示 -->
+    <view class="seekPull_content" wx:if="{{pullShow == true}}">
+      <view class="seekPull_img">
+        <image src="../../images/top.png"></image>
+      </view>
+      <view class="seekPull_text">下拉可以创建野区哦...</view>
+    </view>
+    <!-- 创建按钮 -->
+    <view class="newSeek" bindtap='toCreate' wx:if="{{pullShow == false}}">+ 创建野区</view>
+  </view>
+  <!-- 打野top -->
+  <view class="seekTop">
+    <view class="seekTop_left">正在组队</view>
+    <view class="seekTop_right" bindtap='showList'>查看全部>></view>
+  </view>
+  <other-card></other-card>
+</view>

@@ -1,0 +1,40 @@
+<!--pages/playsDetail/index.wxml-->
+<cu-custom bgColor="bg-purple-gradual" isBack="{{true}}">
+  <view slot="content">预约详情</view>
+</cu-custom>
+<!-- addSeekTop -->
+<view class="addSeekTop">
+  <view class="addSeekTop_img">
+    <image src="../../images/addSeek.png"></image>
+  </view>
+  <view class="addSeekTop_title">
+    <text>独家</text>
+    舞蹈家的致命芭蕾
+  </view>
+  <view class="addSeekTop_score">
+    <text>8.9<text>分</text></text>新手·7/8/9人进阶对抗
+  </view>
+  <view class="addSeekTop_bottom">
+    <view class="addSeekTop_bottom_left">
+        <view>推理系数:</view>
+        <view class="addSeekTop_bottom_starImg"><image src="../../images/addSeek_star.png"></image></view>
+      </view>
+    <view class="addSeekTop_bottom_right">
+        <view>剧情:</view>
+         <view class="addSeekTop_bottom_starImg"><image src="../../images/addSeek_star.png"></image></view> 
+        </view>
+  </view>
+</view>
+
+<view class="reservationDetails_address">
+  <view></view>
+  <view>地址：</view>
+  <view>北京-朝阳区-东大桥</view>
+</view>
+
+<view class="reservationDetails_address">
+  <view></view>
+  <view>时间：</view>
+  <view>2019-09-08</view>
+  <view>13：00-15:00</view>
+</view>

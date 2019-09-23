@@ -1,0 +1,9 @@
+<!--pages/addCredit/index.wxml-->
+<cu-custom bgColor="bg-purple-gradual" isBack="{{true}}">
+  <view slot="content">充值</view>
+</cu-custom>
+<view class="input">
+  <view class="txt">充值金额</view>
+  <input type='number' placeholder='请输入充值金额'></input>
+</view>
+<view class="btn">立即充值</view>

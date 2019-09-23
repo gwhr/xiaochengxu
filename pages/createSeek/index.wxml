@@ -1,0 +1,44 @@
+<!--pages/createSeek/index.wxml-->
+<cu-custom bgColor="bg-purple-gradual" isBack="{{true}}">
+  <view slot="content">创建打野</view>
+</cu-custom>
+<!-- addSeekButton -->
+<view class="addSeekButton">
+  <view class="addSeekButton_btn">立即创建</view>
+</view>
+<!-- content -->
+<view class="cu-list menu sm-border">
+  <view class="cu-item arrow">
+    <view class="content">
+      <text class="text-darkGray">选择剧本</text>
+    </view>
+  </view>
+  <view class="cu-item arrow">
+    <view class="content">
+      <text class="text-darkGray">选择地址</text>
+    </view>
+  </view>
+  <view class="cu-item arrow" bindtap='toAbout'>
+    <view class="content">
+      <text class="text-darkGray">预约日期</text>
+    </view>
+  </view>
+  <view class="cu-item arrow">
+    <view class="content">
+      <text class="text-darkGray">选择时间段</text>
+    </view>
+  </view>
+  <view class="cu-item arrow">
+    <view class="content">
+      <text class="text-darkGray">总人数</text>
+    </view>
+  </view>
+</view>
+
+<!-- addSeekBottom -->
+<view class="addSeekBottom">
+  <view class="title">打野须知</view>
+  <view class="content">1.创建野区后人数凑够即可开战</view>
+  <view class="content">2.到店消费出示小程序内的房间号即可开始畅玩；</view>
+  <view class="content">3.距离预约时间8小时内不可以取消预约，定金不予退还。</view>
+</view>

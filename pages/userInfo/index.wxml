@@ -1,0 +1,51 @@
+<!--pages/userInfo/index.wxml-->
+<cu-custom bgColor="bg-purple-gradual" isBack="{{true}}">
+  <view slot="content">我的资料</view>
+</cu-custom>
+<view class="cu-list menu">
+  <view class="cu-item">
+    <view class="content">
+      <text class="text-black">我的头像</text>
+    </view>
+    <view class="action">
+      <view class="cu-avatar-group">
+        <view class="cu-avatar round" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10004.jpg);"></view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="cu-list menu">
+  <view class="cu-item arrow">
+    <view class="content">
+      <text class="text-black">姓名</text>
+    </view>
+    <view class="action">
+      <text class="text-gray text-sm">小目标还没有实现！</text>
+    </view>
+  </view>
+  <view class="cu-item arrow">
+    <view class="content">
+      <text class="text-black">性别</text>
+    </view>
+    <view class="action">
+      <text class="text-gray text-sm">女</text>
+    </view>
+  </view>
+  <view class="cu-item arrow">
+    <view class="content">
+      <text class="text-black">职业</text>
+    </view>
+    <view class="action">
+      <text class="text-gray text-sm">设计师</text>
+    </view>
+  </view>
+  <view class="cu-item arrow">
+    <view class="content">
+      <text class="text-black">手机号</text>
+    </view>
+    <view class="action">
+      <text class="text-gray text-sm">更换</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,47 @@
+<!--pages/addSeek/index.wxml-->
+<cu-custom bgColor="bg-purple-gradual" isBack="{{true}}">
+  <view slot="content">加入打野</view>
+</cu-custom>
+<!-- addSeekButton -->
+<view class="addSeekButton">
+  <view class="addSeekButton_btn">加入打野</view>
+</view>
+
+<!-- addSeekTop -->
+<view class="addSeekTop">
+  <view class="addSeekTop_img">
+    <image src="../../images/addSeek.png"></image>
+  </view>
+  <view class="addSeekTop_title">
+    <text class="tag">独家</text>
+    <text>舞蹈家的致命芭蕾</text>
+  </view>
+  <view class="addSeekTop_score">
+    <text>8.9<text>分</text></text>高手进阶·7人本
+  </view>
+  <view class="addSeekTop_bottom">
+    <view class="addSeekTop_bottom_left">
+        <view>推理指数:</view>
+        <view class="addSeekTop_bottom_starImg"><image src="../../images/addSeek_star.png"></image></view>
+      </view>
+    <view class="addSeekTop_bottom_right">
+        <view>推理指数:</view>
+         <view class="addSeekTop_bottom_starImg"><image src="../../images/addSeek_star.png"></image></view>
+         <view class="addSeekTop_bottom_starImg"><image src="../../images/addSeek_star.png"></image></view> 
+        </view>
+  </view>
+</view>
+
+<!-- addSeekMiddle -->
+<view class="addSeekMiddle">
+  <view>房间当前5人</view>
+  <view>还差1人</view>
+</view>
+
+<!-- addSeekBottom -->
+<view class="addSeekBottom">
+  <view class="title">打野须知</view>
+  <view class="content">1.创建野区后人数凑够即可开战</view>
+  <view class="content">2.到店消费出示小程序内的房间号即可开始畅玩；</view>
+  <view class="content">3.距离预约时间8小时内不可以取消预约，定金不予退还。</view>
+</view>

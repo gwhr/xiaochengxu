@@ -1,0 +1,23 @@
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+.tag {
+  font-weight:600;
+  color: #fff;
+  background: #00b90d;
+  padding: 6rpx 12rpx;
+  border-radius: 10rpx;
+  display: inline-block;
+  margin-right: 15rpx;
+}
+.tag1{
+  background: #00b90d;
+}
+.tag2{
+  background: #ff7302;
+}
+.tag3{
+  background: #fd1f34;
+}
+.tag4{
+  background: #0291ff;
+}

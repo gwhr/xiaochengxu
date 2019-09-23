@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "other-card": "/components/other-card/index"
+  }
+}

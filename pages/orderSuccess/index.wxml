@@ -1,0 +1,11 @@
+<!--pages/orderSuccess/index.wxml-->
+<cu-custom bgColor="bg-purple-gradual" isBack="{{true}}">
+  <view slot="content">预约成功</view>
+</cu-custom>
+<view class="frogDetection_img">
+  <image src="../../images/liebiao.png"></image>
+</view>
+<view class="frogDetection_text">预约成功!</view>
+
+<!-- addSeekButton -->
+  <view class="addSeekButton_btn" bindtap='toMyOrder'>我的预约</view>

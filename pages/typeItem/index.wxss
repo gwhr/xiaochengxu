@@ -1,0 +1,105 @@
+/* pages/typeItem/index.wxss */
+page{
+  background: #f0f2f7;
+}
+.type-list{
+  height: 110rpx;
+  width: 100%;
+  position: relative;
+}
+.type-list .back-icon{
+  width: 65rpx;
+  height: 110rpx;
+  /* display: inline-block; */
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 20rpx;
+  background: #ffffff;
+}
+.type-list .back-icon image{
+  width: 24rpx;
+  height: 24rpx;
+}
+.type-nav{
+  height: 110rpx;
+  padding-left: 65rpx;
+}
+.type-nav .cu-item{
+  height: 110rpx;
+  line-height: 110rpx;
+  color: #222222;
+  font-size: 30rpx;
+}
+/* ac7cfd */
+.type-nav .cu-item.cur{
+  font-weight: bold;
+  color: #ac7cfd;
+}
+.type-item{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 34rpx 30rpx 0;
+}
+.type-item .type-people-item{
+  display: inline-block;
+  width: 200rpx;
+  height: 82rpx;
+  border: 2rpx solid #888888;
+  border-radius: 82rpx;
+  text-align: center;
+  line-height: 82rpx;
+  color: #888888;
+  font-size: 26rpx;
+  margin-bottom: 38rpx;
+}
+.type-item .type-people-item.active{
+  border: 2rpx solid #ac7cfd;
+  color: #ac7cfd;
+}
+
+.type-item .type-subject-item {
+  width: 328rpx;
+  height: 120rpx;
+  background: #ffffff;
+  border:2rpx solid #d2d2d2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 26rpx;
+  margin-bottom: 20rpx;
+}
+.type-item .type-subject-item .name{
+  font-size: 34rpx;
+  color: #222222; 
+}
+.type-item .type-subject-item .img{
+  height: 100%;
+  background: red;
+  width: 146rpx;
+}
+
+.type-item .type-background-item {
+  width: 328rpx;
+  height: 166rpx;
+  background: #ffffff;
+  border:2rpx solid #d2d2d2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15rpx;
+  margin-bottom: 28rpx;
+}
+.type-item .type-background-item .name{
+  font-size: 34rpx;
+  color: #222222; 
+}
+.type-item .type-background-item .img{
+  height: 100rpx;
+  width: 200rpx;
+  background: red;
+  border-radius: 6rpx;
+}

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "other-card-edit": "/components/other-card-edit/index"
+  }
+}

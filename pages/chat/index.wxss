@@ -1,0 +1,4 @@
+/* pages/chat/index.wxss */
+.cu-chat{
+  padding-bottom: 55rpx;
+}

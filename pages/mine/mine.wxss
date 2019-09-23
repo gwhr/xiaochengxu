@@ -1,0 +1,160 @@
+/* pages/mine/mine.wxss */
+page{
+  background: #f0f2f7;
+}
+.user-info{
+  width: 100%;
+  height: 400rpx;
+  background: linear-gradient(180deg, #754aef, #f0f2f7);
+  position: relative
+}
+.user-info-img{
+  width: 100%;
+  height: 130rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32rpx;
+  color: #ffffff;
+}
+.user-info-img .user-info-name{
+  width: 440rpx;
+}
+.user-info-img .user-info-name .img{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  float: left;
+  overflow: hidden;
+}
+
+.user-info-img .user-info-name .img image{
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.user-info-img .user-info-name .name{
+  float: left;
+  font-size: 32rpx;
+  padding: 20rpx;
+}
+.user-info-img .user-info-name .name text{
+  font-size: 22rpx;
+}
+.user-info-img .user-info-phone{
+  font-size: 28rpx;
+}
+
+.user-purse{
+  width: 100%;
+  height: 68rpx;
+  padding: 0 32rpx;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user-purse .money {
+  font-size: 28rpx
+}
+.user-purse .money text{
+  font-size: 32rpx;
+}
+.user-purse .add-credit{
+  width: 154rpx;
+  height: 68rpx;
+  border-radius: 68rpx;
+  text-align: center;
+  background: #ffffff;
+  color: #8a42f5;
+  line-height: 68rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.user-item{
+  position: absolute;
+  width: 688rpx;
+  height: 182rpx;
+  background: #ffffff;
+  border-radius: 10rpx;
+  bottom: 0;
+  left: 50%;
+  margin-left: -344rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.user-item .items{
+  flex: 1;
+  height: 100%;
+  padding-top:50rpx;
+  position: relative;
+}
+.user-item .items .number{
+  font-size: 38rxp;
+  color: #8a42f5;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 23rpx;
+}
+.user-item .items .title{
+  font-size: 26rpx;
+  color: #888888;
+  text-align: center;
+  font-weight: bold;
+}
+.user-item .items .red-tag{
+  position: absolute;
+  width: 20rpx;
+  height: 20rpx;
+  background: red;
+  border-radius: 50%;
+  right: 52rpx;
+  top:40rpx;
+}
+
+.cu-list{
+  margin-top: 20rpx;
+}
+.cu-list .cu-item{
+  min-height: 115rpx;
+  line-height: 115rpx;
+  position: relative
+}
+.message-btn{
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 115rpx;
+}
+.cu-list .cu-item .text-darkGray{
+  font-weight: 600;
+}
+.cu-list .cu-item .content{
+  display: flex;
+  align-items: center;
+}
+.cu-list .cu-item .content .icon {
+  width: 58rpx;
+  height: 58rpx;
+  display: inline-block;
+  margin-right: 23rpx;
+}
+.cu-list .cu-item .content .icon image{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+
+.company{
+  width: 100%;
+  margin-top: 35rpx;
+  text-align: center;
+  color: #999999;
+  font-weight: 600;
+  font-size: 26rpx;
+}

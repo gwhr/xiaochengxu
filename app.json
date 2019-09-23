@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/playsList/index",
+    "pages/playedDetail/index",
+    "pages/address/index",
+    "pages/orderDetail/index",
+    "pages/joinSeek/index",
+    "pages/about/index",
+    "pages/mine/mine",
+    "pages/jungle/index",
+    "pages/typeItem/index",
+    
+    "pages/addCredit/index",
+    "pages/messageList/index",
+    "pages/chat/index",
+    "pages/established/index",
+    "pages/createSeek/index",
+    "pages/wantSeek/index",
+    "pages/played/index",
+    "pages/myOrder/index",
+    "pages/userInfo/index",
+    "pages/coupon/index",
+    "pages/orderSuccess/index",
+    "pages/playsDetail/index"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ColorUI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "borderStyle": "white",
+    "color": "#999999",
+    "selectedColor": "#8A42F5",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/tabbar/index.png",
+        "selectedIconPath": "/images/tabbar/index_cur.png"
+      },
+      {
+        "pagePath": "pages/jungle/index",
+        "text": "打野",
+        "iconPath": "/images/tabbar/jun.png",
+        "selectedIconPath": "/images/tabbar/jun_cur.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/images/tabbar/about.png",
+        "selectedIconPath": "/images/tabbar/about_cur.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json"
+}

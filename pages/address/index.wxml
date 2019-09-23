@@ -1,0 +1,32 @@
+<!--pages/adress/index.wxml-->
+<cu-custom bgColor="bg-purple-gradual" isBack="{{true}}">
+  <view slot="content">组织地址</view>
+</cu-custom>
+<view class="list-item" data-id="1" bindtap='choose'>
+  <view class="item">
+    <view>总部地址</view>
+    <image class="{{isShow == 1?'active':''}}" src='../../images/right-right-g.png'></image>
+  </view>
+  <view class="option-list" wx:if="{{isShow == 1}}">
+    <view class="option-item">北京市-朝阳区-望京-星源国际D座1208</view>
+  </view>
+</view>
+<view class="block-line"></view>
+<view class="list-item" data-id="2" bindtap='choose'>
+  <view class="item">
+    <view>青年路店</view>
+    <image class="{{isShow == 2?'active':''}}"  src='../../images/right-right-g.png'></image>
+  </view>
+  <view class="option-list" wx:if="{{isShow == 2}}">
+    <view class="option-item">北京市-朝阳区-望京-星源国际D座1208</view>
+  </view>
+</view>
+<view class="list-item" data-id="3" bindtap='choose'>
+  <view class="item">
+    <view>昌平店</view>
+    <image class="{{isShow == 3?'active':''}}"  src='../../images/right-right-g.png'></image>
+  </view>
+  <view class="option-list" wx:if="{{isShow == 3}}">
+    <view class="option-item">北京市-朝阳区-望京-星源国际D座1208</view>
+  </view>
+</view>

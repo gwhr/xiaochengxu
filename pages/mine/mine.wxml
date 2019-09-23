@@ -1,0 +1,101 @@
+<!--pages/mine/mine.wxml-->
+<cu-custom bgColor="bg-purple-mine">
+  <view slot="content">个人中心</view>
+</cu-custom>
+<view class="user-info">
+  <view class="user-info-img">
+    <view class="user-info-name" bindtap='toUserInfo'>
+      <view class="img">
+        <image src="../../images/mine/user.png"></image>
+      </view>
+      <view class="name">
+        <view class="t">Juan</view>
+        <text>高级会员</text>
+      </view>
+    </view>
+    <view class="user-info-phone">绑定手机号</view>
+  </view>
+  <view class="user-purse">
+    <view class="money">账户余额:￥
+      <text>1888</text>
+    </view>
+    <view class="add-credit" bindtap='addCredit'>去充值</view>
+  </view>
+  <view class="user-item">
+    <view class="items" bindtap='toOrder'>
+      <view class="number">18</view>
+      <view class="title">已预约</view>
+    </view>
+    <view class="items" bindtap='toPlayed'>
+      <view class="number">68</view>
+      <view class="title">已玩过</view>
+    </view>
+    <view class="items" bindtap='toEstablished'>
+      <view class="number">5</view>
+      <view class="title">已创建</view>
+    </view>
+    <view class="items" bindtap='toMessage'>
+      <view class="red-tag"></view>
+      <view class="number">5</view>
+      <view class="title">消息</view>
+    </view>
+  </view>
+</view>
+<view class="cu-list menu sm-border card-menu">
+  <view class="cu-item arrow" bindtap='toCoupon'>
+    <view class="content">
+      <view class="icon">
+        <image src="../../images/mine/11_48.png"></image>
+      </view>
+      <text class="text-darkGray">优惠卡券</text>
+    </view>
+  </view>
+  <view class="cu-item arrow" bindtap='toAddress'>
+    <view class="content">
+      <view class="icon">
+        <image src="../../images/mine/11_58.png"></image>
+      </view>
+      <text class="text-darkGray">组织地址</text>
+    </view>
+  </view>
+  <view class="cu-item arrow" bindtap='toAbout'>
+    <view class="content">
+      <view class="icon">
+        <image src="../../images/mine/11_61.png"></image>
+      </view>
+      <text class="text-darkGray">关于我们</text>
+    </view>
+  </view>
+  <view class="cu-item arrow">
+    <view class="content">
+      <view class="icon">
+        <image src="../../images/mine/11_63.png"></image>
+      </view>
+      <text class="text-darkGray">在线客服</text>
+    </view>
+    <button class="message-btn" open-type="contact" bindcontact="handleContact"></button>
+  </view>
+  <view class="cu-item arrow">
+    <view class="content">
+      <view class="icon">
+        <image src="../../images/mine/11_65.png"></image>
+      </view>
+      <text class="text-darkGray">客服微信</text>
+    </view>
+    <view class="action">
+      <text class="text-darkGray text-sm">151546844</text>
+    </view>
+  </view>
+  <view class="cu-item" bindtap='showVersion'>
+    <view class="content">
+      <view class="icon">
+        <image src="../../images/mine/11_67.png"></image>
+      </view>
+      <text class="text-darkGray">版本信息</text>
+    </view>
+    <view class="action">
+      <text class="text-darkGray text-sm">当前版本：1.0.1</text>
+    </view>
+  </view>
+</view>
+<view class="company">大眼娃版权所有</view>

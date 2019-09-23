@@ -1,0 +1,47 @@
+/* pages/adress/index.wxss */
+.list-item{
+  width: 100%;
+  overflow: hidden;
+  padding: 0 36rpx;
+  display: flex;
+  background: #ffffff;
+  flex-wrap: wrap;
+}
+.list-item .item{
+  width: 100%;
+  height: 129rpx;
+  border-bottom: 1px solid #DCDCDC;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30rpx;
+  color: #666666;
+  font-family: 'FZLTZHK--GBK1-0';
+  font-weight:600;
+}
+.list-item .item image{
+  display: inline-block;
+  width: 24rpx;
+  height: 24rpx;
+}
+.list-item .item image.active{
+  transform: rotate(90deg)
+}
+.list-item .option-list{
+  width: 100%;
+  overflow: hidden;
+  font-family: 'FZLTXHK--GBK1-0';
+  font-size: 30rpx;
+  color: #666666;
+  background: #ffffff;
+  font-weight:200;
+  transition: all .3s;
+}
+.list-item .option-list .option-item{
+  height: 129rpx;
+  line-height: 129rpx;
+}
+.block-line{
+  width: 100%;
+  height: 18rpx;
+}

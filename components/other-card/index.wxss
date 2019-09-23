@@ -1,0 +1,131 @@
+/* components/other-card/index.wxss */
+/* 打野list */
+.seekUl{
+  width:100%;
+  overflow: hidden;
+}
+.seekUl .seekLi{
+  width:100%;
+  height:350rpx;
+  background:#fff;
+  padding:0 0 0 34rpx;
+  box-sizing: border-box;
+  margin-top:24rpx;
+  transition: all .6s ease-in-out 0s;
+  position: relative;
+}
+.seekUl .move{
+  transform:translateX(-256rpx);
+}
+.seekLi .delete{
+  width: 256rpx;
+  background: #F19149;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top:0;
+  transform: translateX(100%);
+  color: #ffffff;
+  font-size: 38rpx;
+  font-weight: 600;
+  line-height: 350rpx;
+  text-align: center;
+}
+.seekLi .seekLi_top{
+  width:100%;
+  height:254rpx;
+  border-bottom:1rpx solid #e5e5e5;
+  padding-top:24rpx;
+  box-sizing: border-box
+}
+.seekLi_top .seekLi_top_img{
+  width:200rpx;
+  height:200rpx;
+  background:orangered;
+  border-radius: 15rpx;
+  overflow: hidden;
+  float:left;
+  margin-right:27rpx;
+}
+.seekLi_top_img image{
+  width:100%;
+  height:100%;
+}
+.seekLi .seekLi_top_right{
+  padding-top:6rpx;
+  float:left;
+}
+.seekLi_top_right .title{
+  font-size:34rpx;
+  font-weight: bold;
+  margin-bottom:10rpx;
+}
+.explain{
+  font-size:28rpx;
+  color:#00b90d;
+  font-weight: bold;
+  margin-bottom:10rpx;
+}
+.explain1{
+  color:#00b90d;
+}
+.explain2{
+  color:#ff7302;
+}
+.explain3{
+  color:#fd1f34;
+}
+.explain4{
+  color:#0291ff;
+}
+.tag {
+  font-weight:600;
+  color: #fff;
+  background: #00b90d;
+  padding: 6rpx 12rpx;
+  border-radius: 8rpx;
+  display: inline-block;
+  margin-right: 15rpx;
+}
+.tag1{
+  background: #00b90d;
+}
+.tag2{
+  background: #ff7302;
+}
+.tag3{
+  background: #fd1f34;
+}
+.tag4{
+  background: #0291ff;
+}
+
+/* end */
+.seekLi_top_right .address{
+  font-size:26rpx;
+  margin-bottom:15rpx;
+}
+.seekLi_top_right  .time{
+  font-size:26rpx;
+}
+.time_txtStyle{
+  margin-right:30rpx;
+}
+.seekLi_bottom{
+  width:100%;
+  height:95rpx;
+  line-height: 95rpx;
+}
+.seekLi_bottom .seekLi_bottom_left{
+  color:#666666;
+  font-size:29rpx;
+  font-weight: bold;
+  float:left;
+}
+.seekLi_bottom .seekLi_bottom_right{
+  color:#ff7302;
+  font-size:23rpx;
+  font-weight: bold;
+  float:right;
+  margin-right:33rpx;
+}

@@ -1,0 +1,24 @@
+<!--pages/about/index.wxml-->
+<cu-custom bgColor="bg-purple-gradual" isBack="{{true}}">
+  <view slot="content">关于我们</view>
+</cu-custom>
+<view class="about-top">
+  <view class="logo">
+    <image src="../../images/logo.png"></image>
+  </view>
+  <view class="title">蛙探</view>
+  <view class="txt">V1.0.1</view>
+</view>
+<view class="cu-list menu">
+  <view class="cu-item arrow">
+    <view class="content">
+      <text class="txt text-darkGray">商务合作</text>
+    </view>
+  </view>
+  <view class="cu-item arrow">
+    <view class="content">
+      <text class="txt text-darkGray">推荐给朋友</text>
+    </view>
+  </view>
+</view>
+<view class="xy"><text>服务条款</text><text class="line">|</text><text>免责声明</text></view>

@@ -1,0 +1,26 @@
+<!--pages/coupon/index.wxml-->
+<cu-custom bgColor="bg-purple-gradual" isBack="{{true}}">
+  <view slot="content">优惠卡券</view>
+</cu-custom>
+<view class="coupin-item">
+  <image src='../../images/coupon.png' class="coupin_img"></image>
+  <view class="content">
+    <view class='coupon-left'><text class="price">100</text><text>元</text></view>
+    <view class='coupon-right'>
+      <view class="title">新客抵扣券</view>
+      <view class="txt">任意店铺消费500元可用，仅限新用户在特能装平台使用</view>
+      <view class="time">有效期至2019-10-01</view>
+    </view>
+  </view>
+</view>
+<view class="coupin-item">
+  <image src='../../images/coupon.png' class="coupin_img"></image>
+  <view class="content">
+    <view class='coupon-left'><text class="price">80</text><text>元</text></view>
+    <view class='coupon-right'>
+      <view class="title">新客抵扣券</view>
+      <view class="txt">任意店铺消费500元可用，仅限新用户在特能装平台使用</view>
+      <view class="time">有效期至2019-10-01</view>
+    </view>
+  </view>
+</view>

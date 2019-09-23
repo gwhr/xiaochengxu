@@ -1,0 +1,103 @@
+<!--pages/playsDetail/index.wxml-->
+<!-- addSeekButton -->
+<cu-custom wx:if="{{!isShow}}" style="position:fixed;z-index:99" bgColor="bg-no-color" isBack="{{true}}">
+  <view slot="content">剧本详情</view>
+</cu-custom>
+<cu-custom wx:if="{{isShow}}" style="position:fixed;z-index:99" bgColor="bg-purple-gradual" isBack="{{true}}">
+  <view slot="content">剧本详情</view>
+</cu-custom>
+<view class="addSeekButton" bindtap='toOrder'>
+  <view class="addSeekButton_btn">立即预约</view>
+</view>
+<!-- <view class="back" bindtap='back'></view> -->
+<!-- subscribe_Top -->
+<view class="subscribe_Top">
+  <view class="subscribe_Top_Btn">
+    <view>
+      19.8元预约（全款1998元）
+      <view class="subscribe_Top_img">
+        <image src="../../images/rigth-arrow.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- subscribe_user -->
+<view class="subscribe_user">
+  <view class="subscribe_user_img">
+    <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565178846211&di=d699a5b640a1a990ac320f6d9af5eafa&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201512%2F04%2F20151204210358_vrmui.jpeg"></image>
+  </view>
+  <view class="subscribe_user_name">
+    吃不起的第六季
+  </view>
+  <view class="subscribe_user_btn">
+    <image src="../../images/subscribe_1.png"></image>
+  </view>
+</view>
+<!-- subscribe_address -->
+<view class="subscribe_address">
+  <!-- subscribe_address >> subscribe_address_top-->
+  <view class="subscribe_address_top">
+    <view class="subscribe_address_top_txt">
+      <text>独家</text> 舞蹈家的致命芭蕾
+    </view>
+    <view class="subscribe_choice_img">
+      <image src="../../images/jiantou.png"></image>
+    </view>
+    <view class="subscribe_choice_address">
+      选择地址
+    </view>
+  </view>
+
+  <!-- subscribe_address >> synopsis-->
+  <view class="subscribe_synopsis">
+    <view class="subscribe_synopsis_left">
+      <view class="subscribe_synopsis_leftLi">
+        <text></text>到店畅玩
+      </view>
+      <view class="subscribe_synopsis_leftLi">
+        <text></text>锁定房间
+      </view>
+      <view class="subscribe_synopsis_leftLi">
+        <text></text>无需排队
+      </view>
+    </view>
+    <view class="subscribe_synopsis_center">
+      <image src="../../images/liebiao.png"></image>
+    </view>
+    <view class="subscribe_synopsis_right">
+      <text>预约价</text>
+      <text>￥</text>
+      <text>19.8</text>
+    </view>
+  </view>
+
+  <!-- subscribe_address >> createSeekUl -->
+  <view class="createSeekUl">
+    <view class="createSeekLi">
+      <view class="createSeekLi_text">预约日期</view>
+      <view class="createSeekLi_img">
+        <image src="../../images/jiantou.png"></image>
+      </view>
+    </view>
+    <view class="createSeekLi">
+      <view class="createSeekLi_text">预约时间段</view>
+      <view class="createSeekLi_img">
+        <image src="../../images/jiantou.png"></image>
+      </view>
+    </view>
+    <view class="createSeekLi">
+      <view class="createSeekLi_text">人数</view>
+      <view class="createSeekLi_img">
+        <image src="../../images/jiantou.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- addSeekBottom -->
+<view class="addSeekBottom">
+  <view class="title">打野须知</view>
+  <view class="content">1.创建野区后人数凑够即可开战</view>
+  <view class="content">2.到店消费出示小程序内的房间号即可开始畅玩；</view>
+  <view class="content">3.距离预约时间8小时内不可以取消预约，定金不予退还。</view>
+</view>

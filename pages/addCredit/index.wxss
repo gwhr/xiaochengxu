@@ -1,0 +1,38 @@
+/* pages/addCredit/index.wxss */
+
+.input {
+  width: 100%;
+  background: #fff;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24rpx;
+  padding: 0 26rpx;
+}
+
+.input .txt {
+  font-size: 32rpx;
+  color: #353535;
+  margin-right: 35rpx;
+}
+
+.input input {
+  flex: 1;
+  font-size: 30rpx;
+  line-height: 100rpx;
+}
+
+.btn {
+  width: 640rpx;
+  height: 80rpx;
+  background: linear-gradient(-86deg, rgba(90, 57, 231, 1), rgba(138, 66, 245, 1), rgba(166, 110, 251, 1));
+  border-radius: 40rpx;
+  color: #fff;
+  font-size: 36rpx;
+  line-height: 80rpx;
+  margin: 0 auto;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 323rpx;
+}

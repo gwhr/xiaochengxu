@@ -1,0 +1,71 @@
+page {
+  background: #fafafa;
+}
+
+.tower-swiper .tower-item {
+  transform: scale(calc(0.5 + var(--index) / 10));
+  margin-left: calc(var(--left) * 100rpx - 150rpx);
+  z-index: var(--index);
+}
+
+.screen-swiper {
+  width: 702rpx;
+  margin: 15rpx auto 0;
+  min-height: 268rpx;
+  height: 268rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.screen-swiper swiper-item {
+  padding-bottom: 55rpx;
+  box-sizing: border-box;
+}
+
+.screen-swiper swiper-item .swiper-item {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.ad-card{
+  width: 702rpx;
+  height: 72rpx;
+  border-radius: 10rpx;
+  margin:15rpx auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 19rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0rpx 3rpx 5rpx 0rpx rgba(71,28,164,0.09);
+}
+.ad-card .txt{
+  flex: 1;
+  text-align: left;
+  padding-left: 10rpx;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  font-weight: bold;
+}
+.ad-card image{
+  width: 42rpx;
+  height: 42rpx;
+  margin-right:19rpx;
+}
+.title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22rpx 0 40rpx;
+  width: 100%;
+  height: 70rpx;
+  font-size: 24rpx;
+  margin-bottom: 6rpx;
+}
+.title .h3{
+  font-weight:600;
+  font-size: 32rpx;
+}

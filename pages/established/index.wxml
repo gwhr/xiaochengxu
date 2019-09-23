@@ -1,0 +1,5 @@
+<!--pages/established/index.wxml-->
+<cu-custom bgColor="bg-purple-gradual" isBack="{{true}}">
+  <view slot="content">我创建的</view>
+</cu-custom>
+<other-card-edit txt="取消创建"></other-card-edit>

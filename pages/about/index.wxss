@@ -1,0 +1,48 @@
+/* pages/about/index.wxss */
+.about-top{
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 60rpx;
+}
+.about-top .logo{
+  width: 152rpx;
+  height: 152rpx;
+  margin:63rpx auto 22rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.about-top .logo image{
+  width: 100%;
+  height: 100%;
+}
+.about-top .title,.about-top .txt{
+  text-align: center;
+}
+.about-top .title{
+  font-size: 32rpx;
+  color: #000000;
+  font-weight: 600;
+  margin-bottom: 32rpx;
+}
+.about-top .txt{
+  font-size: 30rpx;
+  color: #000000;
+}
+.cu-item .txt{
+  font-weight: 600
+}
+.menu{
+  margin-bottom: 280rpx;
+}
+.xy{
+  display: flex;
+  width: 100%;
+  height: 60rpx;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  color: #666666;
+}
+.line{
+  margin: 0 15rpx;
+}

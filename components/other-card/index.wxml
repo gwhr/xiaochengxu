@@ -1,0 +1,24 @@
+<!--components/other-card/index.wxml-->
+<view class="seekUl">
+  <view class="seekLi" wx:for="{{seekList}}" wx:for-item="seekListItem" wx:key>
+    <view class="seekLi_top">
+      <view class="seekLi_top_img">
+        <image src="{{seekListItem.imgSrc}}"></image>
+      </view>
+      <view class="seekLi_top_right">
+        <view class="title">{{seekListItem.title}}</view>
+        <view class="explain">
+          <text class="tag">{{seekListItem.explain}}</text>{{seekListItem.explain_changeTxt}}</view>
+        <view class="address">{{seekListItem.address}}</view>
+        <view class="time">
+          <text class="time_txtStyle">{{seekListItem.timeDate}}</text>
+          <text>{{seekListItem.timeTime}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="seekLi_bottom">
+      <view class="seekLi_bottom_left">房间当前{{seekListItem.peopleNumber}}人</view>
+      <view class="seekLi_bottom_right" bindtap='toJion'>加入打野</view>
+    </view>
+  </view>
+</view>
