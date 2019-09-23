@@ -1,6 +1,6 @@
 // pages/jungle/index.js
+const app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -9,6 +9,7 @@ Page({
     pullShow: true,
     paddingTop:34,
     showList:false,
+    listData: [], // 打野列表
   },
   showList(){
     this.setData({
@@ -18,13 +19,27 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad() {
+    // 初始化towerSwiper 传已有的数组名即可
+    this.getList();
   },
   //创建打野
   toCreate(){
     wx.navigateTo({
       url: '/pages/playsList/index?path=playedDetail',
+    })
+  },
+  // 打野列表
+  // 获取列表数据
+  getList(pageNumber = 1, pageSize = 6) {
+    app.http('getGameList', {
+      pageNumber,
+      pageSize
+    }).then(res => {
+      // this.listData = res.data.list
+      this.setData({
+        listData: res.data.list
+      })
     })
   },
   // ListTouch触摸开始

@@ -13,5 +13,4 @@
   <text class="h3">热门剧本</text>
   <text bindtap='toList'>查看全部 >></text>
 </view>
-<index-card DataList="listData"></index-card>
-<index-card></index-card>
+<index-card DataList="{{listData}}"></index-card>

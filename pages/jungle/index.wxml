@@ -20,5 +20,5 @@
     <view class="seekTop_left">正在组队</view>
     <view class="seekTop_right" bindtap='showList'>查看全部>></view>
   </view>
-  <other-card></other-card>
+  <other-card listData="{{listData}}"></other-card>
 </view>

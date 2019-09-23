@@ -1,9 +1,9 @@
 <!--components/index-card/index.wxml-->
-<view class="card" bindtap='toDetail'>
+<view class="card" bindtap='toDetail' wx:for="{{DataList}}" wx:key>
   <view class="card_con">
     <view class="card_cover">
-      <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565092910813&di=a7cd1ff1059ef949bab8d2bc9920b41b&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180223%2F327108e679e94805845cf5c41c47faff.jpeg"></image>
-      <view class="cover_point">9.0 <text>分</text></view>
+      <image src="{{item.thumb}}"></image>
+      <view class="cover_point">{{item.score}} <text>分</text></view>
     </view>
     <view class="card_right">
       <view class="title">游戏骑士</view>

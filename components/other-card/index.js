@@ -4,7 +4,7 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    listData: Array
   },
 
   /**
@@ -25,6 +25,17 @@ Component({
   },
 
   /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    
+  },
+
+  onShow () {
+    console.log(1)
+  },
+
+  /**
    * 组件的方法列表
    */
   methods: {
@@ -32,6 +43,6 @@ Component({
       wx.navigateTo({
         url: '/pages/joinSeek/index',
       })
-    },
+    }
   }
 })

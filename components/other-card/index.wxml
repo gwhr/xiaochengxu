@@ -1,6 +1,6 @@
 <!--components/other-card/index.wxml-->
 <view class="seekUl">
-  <view class="seekLi" wx:for="{{seekList}}" wx:for-item="seekListItem" wx:key>
+  <!-- <view class="seekLi" wx:for="{{seekList}}" wx:for-item="seekListItem" wx:key>
     <view class="seekLi_top">
       <view class="seekLi_top_img">
         <image src="{{seekListItem.imgSrc}}"></image>
@@ -18,6 +18,27 @@
     </view>
     <view class="seekLi_bottom">
       <view class="seekLi_bottom_left">房间当前{{seekListItem.peopleNumber}}人</view>
+      <view class="seekLi_bottom_right" bindtap='toJion'>加入打野</view>
+    </view>
+  </view> -->
+  <view class="seekLi" wx:for="{{listData}}" wx:for-item="listDataItem" wx:key>
+    <view class="seekLi_top">
+      <view class="seekLi_top_img">
+        <image src="{{listDataItem.script.thumb}}"></image>
+      </view>
+      <view class="seekLi_top_right">
+        <view class="title">{{listDataItem.script.name}}</view>
+        <view class="explain">
+          <text class="tag">盒装</text>{{listDataItem.numbers}}人进阶对抗</view>
+        <view class="address">地址: {{listDataItem.start_date}}</view>
+        <view class="time">
+          <!-- <text class="time_txtStyle">{{listDataItem.script.name}}</text> -->
+          <text>{{listDataItem.created_at}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="seekLi_bottom">
+      <view class="seekLi_bottom_left">房间当前{{listDataItem.now_numbers}}人</view>
       <view class="seekLi_bottom_right" bindtap='toJion'>加入打野</view>
     </view>
   </view>
