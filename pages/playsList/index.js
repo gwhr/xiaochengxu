@@ -1,3 +1,6 @@
+//index.js
+//获取应用实例
+const app = getApp()
 // pages/playsList/index.js
 Page({
 
@@ -7,24 +10,62 @@ Page({
   data: {
     indexs:0,
     navList:['全部','独家','城限','盒装','预售'],
-    path:''
+    path:'',
+    pageNumber:1,
+    pageSize:6,
+    type:0,
+    keywords:'',
+    dataList:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      path: options.path
+    // this.setData({
+    //   path: options.path
+    // })
+    this.getAllList();
+  },
+  // 获取全部剧本
+  getAllList(){
+    wx.hideToast();
+    let params = {
+      pageNumber:this.data.pageNumber,
+      pageSize:this.data.pageSize,
+      type:this.data.type,
+      keywords:this.data.keywords,
+    }
+    app.http('getAllList',params)
+    .then(value=>{
+      if(value.code == 200){
+        this.setData({
+          dataList: value.data.list
+        })
+      }else{
+        this.setData({
+          dataList: []
+        })
+        wx.showToast({
+          title: `${value.message}`,
+          icon:'none',
+          duration: 2000
+        })
+      }
+      
     })
   },
   //搜索剧本
   searchPlays(e){
-    if(e.detail.value != ''){
-      wx.navigateTo({
-        url: '/pages/playsDetail/index',
-      })
-    }
+    this.setData({
+      keywords: e.detail.value
+    })
+    this.getAllList();
+    // if(e.detail.value != ''){
+    //   wx.navigateTo({
+    //     url: '/pages/playsDetail/index',
+    //   })
+    // }
   },
   //剧本详情
   toDetail(){
@@ -42,8 +83,9 @@ Page({
   // 导航栏
   chooseNav(e) {
     this.setData({
-      indexs: e.currentTarget.id
+      type: e.currentTarget.id
     })
+    this.getAllList();
   },
   // 跳转筛分类选页
   totypeList(){

@@ -1,3 +1,5 @@
+// 获取应用实例
+const app = getApp()
 // pages/playsDetail/index.js
 Page({
 
@@ -5,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isShow:false
+    isShow:false,
+    id:'',
   },
   onPageScroll: function (e) {
     console.log(e);//{scrollTop:99}
@@ -22,9 +25,23 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-
+  onLoad(options) {
+    this.setData({
+      id:options.id
+    })
+    this.getDetails();
   },
+  // 获取详情
+  getDetails(){
+    let params = {
+      script_id:this.data.id
+    }
+    app.http('getScriptInfo', params)
+    .then(value=>{
+      console.log(value)
+    })
+  },
+  
   //返回
   back() {
     wx.navigateBack({

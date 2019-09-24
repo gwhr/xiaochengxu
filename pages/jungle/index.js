@@ -26,7 +26,7 @@ Page({
   //创建打野
   toCreate(){
     wx.navigateTo({
-      url: '/pages/playsList/index?path=playedDetail',
+      url: '/pages/createSeek/index',
     })
   },
   // 打野列表

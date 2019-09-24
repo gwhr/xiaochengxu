@@ -1,17 +1,17 @@
 <!--components/index-card/index.wxml-->
-<view class="card" bindtap='toDetail' wx:for="{{DataList}}" wx:key>
+<view class="card" bindtap='toDetail' wx:for="{{DataList}}" wx:key data-id="{{item.id}}">
   <view class="card_con">
     <view class="card_cover">
       <image src="{{item.thumb}}"></image>
       <view class="cover_point">{{item.score}} <text>分</text></view>
     </view>
     <view class="card_right">
-      <view class="title">游戏骑士</view>
+      <view class="title">{{item.name}}</view>
       <view class="people_num">
-        <view class="tag">标准</view>
-        <text>7/8/9人进阶对抗</text>
+        <view class="tag">{{item.category_name}}</view>
+        <text>{{item.numbers}}人进阶对抗</text>
       </view>
-      <view class="card_txt">单单位签订去去我的钱无多群无多请问大前锋撒大大高峰的期望的啥的服务器端我发完钱位签订去去我的钱无多群无多请问大前锋撒大大高峰的期望的啥的服务器端我发完钱</view>
+      <view class="card_txt">{{item.introduction}}</view>
     </view>
   </view>
 </view>

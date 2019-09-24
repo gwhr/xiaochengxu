@@ -8,7 +8,7 @@
     <!-- <view class="icon"></view> -->
     <view class="search_inp">
       <view class="search_icon"><image src="../../images/sreach.png"></image></view>
-      <input placeholder='搜索你想要的剧本' bindconfirm='searchPlays'></input>
+      <input placeholder='搜索你想要的剧本' bindconfirm='searchPlays' value="{{keywords}}"></input>
     </view>
     <view class="icon icon_2" bindtap='totypeList'>
       <image src="../../images/sx.png"></image>
@@ -18,18 +18,18 @@
     <view wx:for="{{navList}}" bindtap='chooseNav' id="{{index}}" wx:key class="nav-item{{index == indexs?' active':''}}">{{item}}</view>
   </view>
   <view class="plays-list">
-    <view class="plays-list-item" bindtap='toDetail'>
+    <view class="plays-list-item" bindtap='toDetail' wx:for="{{dataList}}" wx:key>
       <view class="plays-cover">
-         <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565092910813&di=a7cd1ff1059ef949bab8d2bc9920b41b&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180223%2F327108e679e94805845cf5c41c47faff.jpeg"></image>
-        <view class="cover_point">9.0 <text>分</text></view>
+         <image src="{{item.thumb}}"></image>
+        <view class="cover_point">{{item.score}} <text>分</text></view>
       </view>
-      <view class="plays-title">世界之巅--游戏骑士</view>
+      <view class="plays-title">{{item.name}}</view>
       <view class="people_num">
-        <view class="tag">标准</view>
-        <text>7/8/9人进阶对抗</text>
+        <view class="tag">{{item.category_name}}</view>
+        <text>{{item.numbers}}人进阶对抗</text>
       </view>
     </view>
-    <view class="plays-list-item" bindtap='toDetail'>
+    <!-- <view class="plays-list-item" bindtap='toDetail'>
       <view class="plays-cover">
          <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565092910813&di=a7cd1ff1059ef949bab8d2bc9920b41b&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180223%2F327108e679e94805845cf5c41c47faff.jpeg"></image>
         <view class="cover_point">9.0 <text>分</text></view>
@@ -50,7 +50,7 @@
         <view class="tag tag3">标准</view>
         <text>7/8/9人进阶对抗</text>
       </view>
-    </view>
+    </view> -->
   </view>
-  <view class="push-list">加载全部</view>
+  <!-- <view class="push-list">加载全部</view> -->
 </view>

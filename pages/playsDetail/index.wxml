@@ -85,12 +85,12 @@
         <image src="../../images/jiantou.png"></image>
       </view>
     </view>
-    <view class="createSeekLi">
+    <!-- <view class="createSeekLi">
       <view class="createSeekLi_text">人数</view>
       <view class="createSeekLi_img">
         <image src="../../images/jiantou.png"></image>
       </view>
-    </view>
+    </view> -->
   </view>
 </view>
 
