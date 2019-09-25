@@ -7,35 +7,20 @@
     <image src='../../images/left-arrow.png'></image>
   </view>
   <scroll-view scroll-x class="bg-white nav type-nav" scroll-with-animation scroll-left="{{scrollLeft}}">
-    <view class="cu-item {{index==TabCur?'text-purple cur':''}}" wx:for="{{typeList}}" wx:key bindtap="tabSelect" data-id="{{index}}">
-      {{item}}
+    <view class="cu-item {{index==TabCur?'text-purple cur':''}}" wx:for="{{typeList}}" wx:key bindtap="tabSelect" data-id="{{index}}" data-name="{{item.id}}">
+      {{item.name}}
     </view>
   </scroll-view>
-  <view class="type-item" wx:if="{{TabCur == 0}}">
-    <view wx:for="{{peopleList}}" bindtap='bindPeople' wx:key class="type-people-item{{index == peopleType?' active':''}}" data-id="{{index}}">{{item}}</view>
+  <view class="type-item" wx:if="{{TabCur == 0 || TabCur == 4 || TabCur == 5}}">
+    <view wx:for="{{selectList}}" bindtap='bindPeople' wx:key class="type-people-item{{index == peopleType?' active':''}}" data-id="{{index}}">{{item.name}}</view>
   </view>
-  <view class="type-item" wx:if="{{TabCur == 1}}">
-    <view wx:for="{{subList}}" wx:key class="type-subject-item">
+  <view class="type-item" wx:else>
+    <view wx:for="{{selectList}}" wx:key class="type-subject-item">
       <view class="name">{{item.name}}</view>
-      <view class="img"></view>
+      <view class="img">
+        <image src="{{item.logo}}"></image>
+      </view>
     </view>
   </view>
-  <view class="type-item" wx:if="{{TabCur == 2}}">
-    <view wx:for="{{subList}}" wx:key class="type-subject-item">
-      <view class="name">{{item.name}}</view>
-      <view class="img"></view>
-    </view>
-  </view>
-  <view class="type-item" wx:if="{{TabCur == 3}}">
-    <view wx:for="{{subList}}" wx:key class="type-background-item">
-      <view class="name">{{item.name}}</view>
-      <view class="img"></view>
-    </view>
-  </view>
-  <view class="type-item" wx:if="{{TabCur == 4}}">
-    <view wx:for="{{peopleList}}" bindtap='bindPeople' wx:key class="type-people-item{{index == peopleType?' active':''}}" data-id="{{index}}">{{item}}</view>
-  </view>
-  <view class="type-item" wx:if="{{TabCur == 5}}">
-    <view wx:for="{{peopleList}}" bindtap='bindPeople' wx:key class="type-people-item{{index == peopleType?' active':''}}" data-id="{{index}}">{{item}}</view>
-  </view>
+
 </view>

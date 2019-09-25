@@ -1,11 +1,12 @@
 // pages/addSeek/index.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    detailData: {}
   },
 
   /**
@@ -13,6 +14,43 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+
+  // 获取列表数据
+  getDetail(game_id, userToken = '') {
+    app.http('getGameInfo', {
+      game_id,
+      userToken
+    }).then(res => {
+      console.log(res.data.info)
+      this.setData({
+        detailData: res.data.info
+      })
+    })
+  },
+  // 加入打野
+  addToGame(e) {
+    let userToken = e.target.dataset.userToken || ''
+    if (userToken === '') {
+      wx.showToast({
+        title: '成功',
+        icon: 'success',
+        duration: 2000,
+        complete: function () {
+          wx.navigateTo({
+            url: '/pages/playsList/index',
+          })
+        }
+      })
+      return
+    } 
+    let game_id = e.target.dataset.game_id
+    app.http('addToGame', {
+      game_id,
+      userToken
+    }).then(res => {
+      console.log(res)
+    })
   },
 
   /**
@@ -26,7 +64,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getDetail(1)
   },
 
   /**

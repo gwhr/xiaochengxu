@@ -44,6 +44,11 @@ page{
   flex-wrap: wrap;
   padding: 34rpx 30rpx 0;
 }
+.type-item::after{
+  content: '';
+  height:0;
+  width: 200rpx;
+}
 .type-item .type-people-item{
   display: inline-block;
   width: 200rpx;
@@ -81,7 +86,10 @@ page{
   background: red;
   width: 146rpx;
 }
-
+.type-item .type-subject-item .img image{
+  width:100%;
+  height:100%;
+}
 .type-item .type-background-item {
   width: 328rpx;
   height: 166rpx;

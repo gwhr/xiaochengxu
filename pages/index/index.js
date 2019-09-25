@@ -9,31 +9,31 @@ Page({
     swiperList: [{
       id: 0,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
+      thumb: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
     }, {
       id: 1,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
+      thumb: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
     }, {
       id: 2,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
+      thumb: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
     }, {
       id: 3,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
+      thumb: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
     }, {
       id: 4,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
+      thumb: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
     }, {
       id: 5,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg'
+      thumb: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg'
     }, {
       id: 6,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
+      thumb: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
     }],
   },
   NavChange(e) {
@@ -43,7 +43,8 @@ Page({
   },
   onLoad() {
     // 初始化towerSwiper 传已有的数组名即可
-    this.getList();
+    this.getList()
+    this.getAdvertList()
   },
   // 获取列表数据
   getList() {
@@ -53,10 +54,28 @@ Page({
     }
     app.http('getIndexList', params)
       .then(value => {
-        this.setData({
-          listData:value.data.list
-        })
-        console.log(value)
+        if(value.code == 200){
+          this.setData({
+            listData: value.data.list
+          })
+        }
+        
+      })
+  },
+  // 获取轮播图
+  getAdvertList(){
+    let params = {
+      position_id:1055
+    }
+    app.http('getIndexList', params)
+      .then(value => {
+        if(value.code == 200){
+          this.setData({
+            swiperList: value.data.list
+          })
+        }
+        
+        console.log(this.data.swiperList)
       })
   },
   DotStyle(e) {

@@ -39,7 +39,7 @@
     </view>
     <view class="seekLi_bottom">
       <view class="seekLi_bottom_left">房间当前{{listDataItem.now_numbers}}人</view>
-      <view class="seekLi_bottom_right" bindtap='toJion'>加入打野</view>
+      <view class="seekLi_bottom_right" bindtap='toJion' data-id="{{listDataItem.id}}">加入打野</view>
     </view>
   </view>
 </view>

@@ -39,9 +39,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    toJion() {
+    toJion(e) {
       wx.navigateTo({
-        url: '/pages/joinSeek/index',
+        url: '/pages/joinSeek/index?game_id=' + e.target.dataset.id,
       })
     }
   }

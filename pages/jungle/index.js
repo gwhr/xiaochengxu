@@ -12,16 +12,21 @@ Page({
     listData: [], // 打野列表
   },
   showList(){
-    this.setData({
-      showList:true,
-    })
+    if (!this.data.showList) {
+      this.setData({
+        showList: true,
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/playsList/index',
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
     // 初始化towerSwiper 传已有的数组名即可
-    this.getList();
   },
   //创建打野
   toCreate(){
@@ -79,7 +84,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getList();
+    this.setData({
+      showList: false,
+    })
   },
 
   /**

@@ -4,38 +4,42 @@
 </cu-custom>
 <!-- addSeekButton -->
 <view class="addSeekButton">
-  <view class="addSeekButton_btn">加入打野</view>
+  <view class="addSeekButton_btn" bindtap="addToGame" data-game_id="{{ detailData.script.id }}">加入打野</view>
 </view>
 
 <!-- addSeekTop -->
 <view class="addSeekTop">
   <view class="addSeekTop_img">
-    <image src="../../images/addSeek.png"></image>
+    <!-- <image src="../../images/addSeek.png"></image> -->
+    <image src="{{ detailData.script.thumb }}"></image>
   </view>
   <view class="addSeekTop_title">
-    <text class="tag">独家</text>
-    <text>舞蹈家的致命芭蕾</text>
+    <!-- <text class="tag">独家</text> -->
+    <text class="tag">{{ detailData.script.category_name }}</text>
+    <!-- <text>舞蹈家的致命芭蕾</text> -->
+    <text>{{ detailData.script.name }}</text>
   </view>
   <view class="addSeekTop_score">
-    <text>8.9<text>分</text></text>高手进阶·7人本
+    <!-- <text>8.9<text>分</text></text>高手进阶·7人本 -->
+    <text>{{ detailData.numbers }}<text>分</text></text>{{ detailData.script.difficulty }}·{{ detailData.price }}人本
   </view>
   <view class="addSeekTop_bottom">
     <view class="addSeekTop_bottom_left">
         <view>推理指数:</view>
-        <view class="addSeekTop_bottom_starImg"><image src="../../images/addSeek_star.png"></image></view>
+        <view class="addSeekTop_bottom_starImg"  wx:for="{{ detailData.script.difficulty_id }}" wx:for-item="seekListItem" wx:key><image src="../../images/addSeek_star.png"></image></view>
       </view>
     <view class="addSeekTop_bottom_right">
         <view>推理指数:</view>
-         <view class="addSeekTop_bottom_starImg"><image src="../../images/addSeek_star.png"></image></view>
-         <view class="addSeekTop_bottom_starImg"><image src="../../images/addSeek_star.png"></image></view> 
+         <view class="addSeekTop_bottom_starImg"  wx:for="{{ detailData.script.difficulty_id }}" wx:for-item="seekListItem" wx:key><image src="../../images/addSeek_star.png"></image></view>
+         <!-- <view class="addSeekTop_bottom_starImg"><image src="../../images/addSeek_star.png"></image></view>  -->
         </view>
   </view>
 </view>
 
 <!-- addSeekMiddle -->
 <view class="addSeekMiddle">
-  <view>房间当前5人</view>
-  <view>还差1人</view>
+  <view>房间当前{{ detailData.now_numbers }}人</view>
+  <view>还差{{ detailData.numbers - detailData.now_numbers }}人</view>
 </view>
 
 <!-- addSeekBottom -->
