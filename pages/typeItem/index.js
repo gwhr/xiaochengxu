@@ -14,33 +14,39 @@ Page({
     typeList:[
       {
         name:'人数',
-        id:'number'
+        id:'number',
+        typeId:'5'
       },
       {
         name: '题材',
-        id: 'theme'
+        id: 'theme',
+        typeId:'2'
       },
       {
         name: '类型',
-        id: 'type'
+        id: 'type',
+        typeId:'3'
       },
       {
         name: '背景',
-        id: 'background'
+        id: 'background',
+        typeId:'1'
       },
       {
         name: '难度',
-        id: 'difficulty'
+        id: 'difficulty',
+        typeId:'4'
       },
-      {
-        name: '周边服务',
-        id: ''
-      },
+      // {
+      //   name: '周边服务',
+      //   id: '',
+      //   typeId:''
+      // },
     ],
-    contentList:[],
-    selectList:[],
-    peopleList: ['3人', '4人', '5人', '6人', '7人','7人以上'],
-    subList: [{ 'name': '恐怖', 'img': '' }, { 'name': '欢乐', 'img': '' }, { 'name': '情感', 'img': '' }]
+    contentList:[], //所有分类数据
+    selectList:[],  //当前分类数据
+    selectId:'',    //当前分类ID
+    selectValue:''  //当前选中分类中的子分类的ID
   },
 
   /**
@@ -51,8 +57,8 @@ Page({
   },
   // 返回上一页
   back() {
-    wx.navigateBack({
-      
+    wx.navigateTo({
+      url: '/pages/playsList/index?delta=2',
     })
   },
   // 导航栏选择
@@ -60,20 +66,22 @@ Page({
     this.setData({
       TabCur: e.currentTarget.dataset.id,
       scrollLeft: (e.currentTarget.dataset.id - 1) * 60,
-      selectList: this.data.contentList[e.currentTarget.dataset.name]
+      selectList: this.data.contentList[e.currentTarget.dataset.name],
+      selectId: e.currentTarget.dataset.typeid,
+      selectValue: this.data.contentList[e.currentTarget.dataset.name][0].id
     })
   },
   // 选择人数
   bindPeople(e){
     this.setData({
-      peopleType: e.currentTarget.dataset.id,
+      selectValue: e.currentTarget.dataset.id,
+      peopleType: e.currentTarget.dataset.index
     })
   },
   // 获取分类
   getCategoryList(){
     app.http('getCategoryList')
     .then(value=>{
-      console.log(value)
       if(value.code == 200){
         this.setData({
           contentList: value.data,

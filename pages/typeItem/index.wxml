@@ -7,12 +7,12 @@
     <image src='../../images/left-arrow.png'></image>
   </view>
   <scroll-view scroll-x class="bg-white nav type-nav" scroll-with-animation scroll-left="{{scrollLeft}}">
-    <view class="cu-item {{index==TabCur?'text-purple cur':''}}" wx:for="{{typeList}}" wx:key bindtap="tabSelect" data-id="{{index}}" data-name="{{item.id}}">
+    <view class="cu-item {{index==TabCur?'text-purple cur':''}}" wx:for="{{typeList}}" wx:key bindtap="tabSelect" data-id="{{index}}" data-name="{{item.id}}" data-typeId="{{item.typeId}}">
       {{item.name}}
     </view>
   </scroll-view>
   <view class="type-item" wx:if="{{TabCur == 0 || TabCur == 4 || TabCur == 5}}">
-    <view wx:for="{{selectList}}" bindtap='bindPeople' wx:key class="type-people-item{{index == peopleType?' active':''}}" data-id="{{index}}">{{item.name}}</view>
+    <view wx:for="{{selectList}}" bindtap='bindPeople' wx:key class="type-people-item{{index == peopleType?' active':''}}" data-id="{{item.id}}" data-index="{{index}}">{{item.name}}</view>
   </view>
   <view class="type-item" wx:else>
     <view wx:for="{{selectList}}" wx:key class="type-subject-item">

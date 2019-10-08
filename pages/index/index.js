@@ -6,35 +6,8 @@ Page({
     listData: [],
     PageCur: 'basics',
     cardCur: 0,
-    swiperList: [{
-      id: 0,
-      type: 'image',
-      thumb: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
-    }, {
-      id: 1,
-      type: 'image',
-      thumb: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
-    }, {
-      id: 2,
-      type: 'image',
-      thumb: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
-    }, {
-      id: 3,
-      type: 'image',
-      thumb: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
-    }, {
-      id: 4,
-      type: 'image',
-      thumb: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
-    }, {
-      id: 5,
-      type: 'image',
-      thumb: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg'
-    }, {
-      id: 6,
-      type: 'image',
-      thumb: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
-    }],
+    swiperList: [],
+    pageNumber:1
   },
   NavChange(e) {
     this.setData({
@@ -49,14 +22,14 @@ Page({
   // 获取列表数据
   getList() {
     let params = {
-      pageNumber: 1,
-      pageSize: 6
+      pageNumber: this.data.pageNumber,
+      pageSize: 5
     }
     app.http('getIndexList', params)
       .then(value => {
         if(value.code == 200){
           this.setData({
-            listData: value.data.list
+            listData: this.data.listData.concat(value.data.list)
           })
         }
         
@@ -74,8 +47,6 @@ Page({
             swiperList: value.data.list
           })
         }
-        
-        console.log(this.data.swiperList)
       })
   },
   DotStyle(e) {
@@ -87,5 +58,19 @@ Page({
     wx.navigateTo({
       url: '/pages/playsList/index',
     })
+  },
+  // 上拉加载
+  onReachBottom(){
+    if (this.data.listData.length < this.data.pageNumber*5){
+      return 
+    }
+    this.setData({
+      pageNumber: (this.data.pageNumber + 1)
+    })
+    this.getList();
+  },
+  // 下拉刷新
+  onPullDownRefresh(){
+    wx.stopPullDownRefresh();
   }
 })
