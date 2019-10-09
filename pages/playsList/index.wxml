@@ -15,7 +15,7 @@
     </view>
   </view>
   <view class="nav-list">
-    <view wx:for="{{navList}}" bindtap='chooseNav' id="{{index}}" wx:key class="nav-item{{index == indexs?' active':''}}">{{item}}</view>
+    <view wx:for="{{navList}}" bindtap='chooseNav' id="{{index}}" data-indexs="{{index}}" wx:key class="nav-item{{index == indexs?' active':''}}">{{item}}</view>
   </view>
   <view class="plays-list">
     <view class="plays-list-item" bindtap='toDetail' wx:for="{{dataList}}" wx:key>

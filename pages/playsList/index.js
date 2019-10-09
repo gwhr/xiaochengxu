@@ -16,6 +16,7 @@ Page({
     type:0,
     keywords:'',
     dataList:[],
+    searchParams:{}
   },
 
   /**
@@ -25,6 +26,14 @@ Page({
     // this.setData({
     //   path: options.path
     // })
+    console.log(options)
+    if (options.type == 2){
+      this.setData({
+        searchParams: options
+      })
+      this.getSearchList();
+      return
+    }
     this.getAllList();
   },
   // 获取全部剧本
@@ -40,7 +49,7 @@ Page({
     .then(value=>{
       if(value.code == 200){
         this.setData({
-          dataList: value.data.list
+          dataList: this.data.dataList.concat(value.data.list)
         })
       }else{
         this.setData({
@@ -53,6 +62,32 @@ Page({
         })
       }
       
+    })
+  },
+  // 获取分类筛选剧本
+  getSearchList(){
+    let params = {
+      type: this.data.searchParams.selectId,
+      pageNumber: this.data.pageNumber,
+      pageSize: this.data.pageSize,
+      value: this.data.searchParams.selectValue,
+    }
+    app.http('getSearchList', params)
+    .then(value=>{
+      if (value.code == 200) {
+        this.setData({
+          dataList: this.data.dataList.concat(value.data.list)
+        })
+      } else {
+        this.setData({
+          dataList: []
+        })
+        wx.showToast({
+          title: `${value.message}`,
+          icon: 'none',
+          duration: 2000
+        })
+      }
     })
   },
   //搜索剧本
@@ -83,13 +118,14 @@ Page({
   // 导航栏
   chooseNav(e) {
     this.setData({
-      type: e.currentTarget.id
+      type: e.currentTarget.id,
+      indexs: e.currentTarget.dataset.indexs
     })
     this.getAllList();
   },
   // 跳转筛分类选页
   totypeList(){
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/typeItem/index',
     })
   },
@@ -132,7 +168,13 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if (this.data.dataList.length < this.data.pageNumber * 5) {
+      return
+    }
+    this.setData({
+      pageNumber: (this.data.pageNumber + 1)
+    })
+    this.getAllList();
   },
 
   /**

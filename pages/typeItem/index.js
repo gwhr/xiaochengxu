@@ -45,7 +45,7 @@ Page({
     ],
     contentList:[], //所有分类数据
     selectList:[],  //当前分类数据
-    selectId:'',    //当前分类ID
+    selectId:'5',    //当前分类ID
     selectValue:''  //当前选中分类中的子分类的ID
   },
 
@@ -57,8 +57,8 @@ Page({
   },
   // 返回上一页
   back() {
-    wx.navigateTo({
-      url: '/pages/playsList/index?delta=2',
+    wx.redirectTo({
+      url: `/pages/playsList/index?selectId=${this.data.selectId}&selectValue=${this.data.selectValue}&type=2`,
     })
   },
   // 导航栏选择
@@ -85,7 +85,8 @@ Page({
       if(value.code == 200){
         this.setData({
           contentList: value.data,
-          selectList: value.data.number
+          selectList: value.data.number,
+          selectValue:value.data.number[0].id
         })
       }
     })
