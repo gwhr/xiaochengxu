@@ -15,6 +15,7 @@ Page({
     })
   },
   onLoad() {
+
     // 初始化towerSwiper 传已有的数组名即可
     this.getList()
     this.getAdvertList()

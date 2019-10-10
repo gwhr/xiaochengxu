@@ -9,6 +9,8 @@
     </view>
   </swiper-item>
 </swiper>
+<view>
+sadsad</view>
 <view class="title">
   <text class="h3">热门剧本</text>
   <text bindtap='toList'>查看全部 >></text>
