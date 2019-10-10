@@ -8,16 +8,11 @@ Page({
   data: {
 
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {  
-    wx.redirectTo({
-      url: '/pages/index/index',
-    })
-    console.log(2)
-    return
+ 
     // 登录
     wx.login({
       success: res => {
@@ -35,10 +30,12 @@ Page({
               // 可以将 res 发送给后台解码出 unionId
               app.globalData.userInfo = res.userInfo;
               app.globalData.userInfo.iv = res.iv;
-              app.globalData.userInfo.encryptedData = encodeURIComponent(res.encryptedData);
+              app.globalData.userInfo.encryptedData = (res.encryptedData);
               this.miniLogin();
               if (app.globalData.userInfo) {
-                console.log(2)
+                wx.switchTab({
+                  url: '/pages/index/index',
+                })
                 
               }
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
