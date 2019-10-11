@@ -62,5 +62,13 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  /**
+   * 选择剧本
+   */
+  toPlaysList: function () {
+    wx.navigateTo({
+      url: '/pages/playsList/index?path=wantSeek&comfrom=createSeek',
+    })
+  },
 })

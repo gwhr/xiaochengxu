@@ -4,7 +4,7 @@
 </cu-custom>
 <view class="container" bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd">
   <!-- 下拉处的提示 -->
-  <view  wx:if="{{!showList}}" class="seekPull" style="padding-top:{{paddingTop}}rpx;">
+  <view wx:if="{{!showList}}" class="seekPull" style="padding-top:{{paddingTop}}rpx;">
     <!-- 提示 -->
     <view class="seekPull_content" wx:if="{{pullShow == true}}">
       <view class="seekPull_img">
@@ -18,7 +18,7 @@
   <!-- 打野top -->
   <view class="seekTop">
     <view class="seekTop_left">正在组队</view>
-    <view class="seekTop_right" bindtap='showList'>查看全部>></view>
+    <!-- <view class="seekTop_right" bindtap='showList'>查看全部>></view> -->
   </view>
   <other-card listData="{{listData}}"></other-card>
 </view>
