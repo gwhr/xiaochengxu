@@ -10,6 +10,7 @@ Page({
     paddingTop:34,
     showList:false,
     listData: [], // 打野列表
+    pageNumber: 1 // 当前分页
   },
   showList(){
     if (!this.data.showList) {
@@ -36,15 +37,17 @@ Page({
   },
   // 打野列表
   // 获取列表数据
-  getList(pageNumber = 1, pageSize = 6) {
-    app.http('getGameList', {
-      pageNumber,
+  getList(pageSize = 5) {
+    let params = {
+      pageNumber: this.data.pageNumber,
       pageSize
-    }).then(res => {
-      // this.listData = res.data.list
-      this.setData({
-        listData: res.data.list
-      })
+    }
+    app.http('getGameList', params).then(res => {
+      if (res.code == 200) {
+        this.setData({
+          listData: this.data.listData.concat(res.data.list)
+        })
+      }
     })
   },
   // ListTouch触摸开始
@@ -121,7 +124,13 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if (this.data.listData.length < this.data.pageNumber * 5) {
+      return
+    }
+    this.setData({
+      pageNumber: (this.data.pageNumber + 1)
+    })
+    this.getList();
   },
 
   /**

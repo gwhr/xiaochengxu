@@ -11,8 +11,8 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {  
- 
+  onLoad: function (options) {
+
     // 登录
     wx.login({
       success: res => {
@@ -36,7 +36,7 @@ Page({
                 wx.switchTab({
                   url: '/pages/index/index',
                 })
-                
+
               }
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
@@ -45,18 +45,18 @@ Page({
               }
             }
           })
-        }else{
+        } else {
 
         }
       }
     })
   },
   // 获取用户信息
-  getUserInfo(res){
+  getUserInfo(res) {
     console.log(res)
-    if(res){
+    if (res) {
       wx.login({
-        success(res){
+        success(res) {
           console.log(res)
         }
       })
