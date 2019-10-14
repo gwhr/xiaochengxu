@@ -9,6 +9,7 @@ Page({
   data: {
     isShow:false,
     id:'',
+    info:{}
   },
   onPageScroll: function (e) {
     console.log(e);//{scrollTop:99}
@@ -29,6 +30,7 @@ Page({
     this.setData({
       id:options.id
     })
+    console.log(options)
     this.getDetails();
   },
   // 获取详情
@@ -38,7 +40,11 @@ Page({
     }
     app.http('getScriptInfo', params)
     .then(value=>{
-      console.log(value)
+      if(value.code == 200){
+        this.setData({
+          info:value.data.info
+        })
+      }
     })
   },
   

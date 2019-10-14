@@ -11,10 +11,10 @@
 </view>
 <!-- <view class="back" bindtap='back'></view> -->
 <!-- subscribe_Top -->
-<view class="subscribe_Top">
+<view class="subscribe_Top" style="background-image:url( {{info.thumb}})">
   <view class="subscribe_Top_Btn">
     <view>
-      19.8元预约（全款1998元）
+      {{info.downpayment}}元预约（全款{{info.price}}元）
       <view class="subscribe_Top_img">
         <image src="../../images/rigth-arrow.png"></image>
       </view>
@@ -22,23 +22,23 @@
   </view>
 </view>
 <!-- subscribe_user -->
-<view class="subscribe_user">
+<!-- <view class="subscribe_user">
   <view class="subscribe_user_img">
-    <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565178846211&di=d699a5b640a1a990ac320f6d9af5eafa&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201512%2F04%2F20151204210358_vrmui.jpeg"></image>
+    <image src="{{info.thumb}}"></image>
   </view>
   <view class="subscribe_user_name">
-    吃不起的第六季
+    {{info.name}}
   </view>
   <view class="subscribe_user_btn">
     <image src="../../images/subscribe_1.png"></image>
   </view>
-</view>
+</view> -->
 <!-- subscribe_address -->
 <view class="subscribe_address">
   <!-- subscribe_address >> subscribe_address_top-->
   <view class="subscribe_address_top">
     <view class="subscribe_address_top_txt">
-      <text>独家</text> 舞蹈家的致命芭蕾
+      <text>{{info.category_name}}</text> {{info.name}}
     </view>
     <view class="subscribe_choice_img">
       <image src="../../images/jiantou.png"></image>
@@ -67,7 +67,7 @@
     <view class="subscribe_synopsis_right">
       <text>预约价</text>
       <text>￥</text>
-      <text>19.8</text>
+      <text>{{info.downpayment}}</text>
     </view>
   </view>
 

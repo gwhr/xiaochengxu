@@ -6,15 +6,18 @@
 <cu-custom wx:if="{{isShow}}" style="position:fixed;z-index:99" bgColor="bg-purple-gradual" isBack="{{true}}">
   <view slot="content">剧本详情</view>
 </cu-custom>
-<view class="addSeekButton" bindtap='toSeck'>
+<view class="addSeekButton" bindtap='toSeck' wx-if="{{from}}">
   <view class="addSeekButton_btn">我想打野</view>
+</view>
+<view class="addSeekButton" bindtap='toAppointment' wx-if="{{from}} == 1">
+  <view class="addSeekButton_btn">去预约</view>
 </view>
 <!-- <view class="back" bindtap='back'></view> -->
 <!-- subscribe_Top -->
-<view class="subscribe_Top">
+<view class="subscribe_Top" style="background-image:url( {{info.thumb}})">
   <view class="subscribe_Top_Btn">
     <view>
-      19.8元预约（全款1998元）
+      {{info.downpayment}}元预约（全款{{info.price}}元）
       <view class="subscribe_Top_img">
         <image src="../../images/rigth-arrow.png"></image>
       </view>
@@ -24,25 +27,22 @@
 <!-- 剧本名 -->
 <view class="addSeekTop">
   <view class="addSeekTop_title">
-    <text class="tag">独家</text>
-    <text>舞蹈家的致命芭蕾</text>
+    <text class="tag">{{info.category_name}}</text>
+    <text>{{info.name}}</text>
   </view>
   <view class="addSeekTop_score">
-    <text>8.9<text>分</text></text>高手进阶·7人本
+    <text>8.9<text>分</text></text>高手进阶·{{info.numbers}}人本
   </view>
   <view class="addSeekTop_bottom">
     <view class="addSeekTop_bottom_left">
       <view>推理指数:</view>
-      <view class="addSeekTop_bottom_starImg">
+      <view class="addSeekTop_bottom_starImg" wx:for="{{info.ratio}}" wx:key>
         <image src="../../images/addSeek_star.png"></image>
       </view>
     </view>
-    <view class="addSeekTop_bottom_right">
-      <view>推理指数:</view>
-      <view class="addSeekTop_bottom_starImg">
-        <image src="../../images/addSeek_star.png"></image>
-      </view>
-      <view class="addSeekTop_bottom_starImg">
+    <view class="addSeekTop_bottom_right" >
+      <view>剧情:</view>
+      <view class="addSeekTop_bottom_starImg" wx:for="{{info.star}}" wx:key>
         <image src="../../images/addSeek_star.png"></image>
       </view>
     </view>
@@ -55,7 +55,7 @@
     <text></text>剧本详情
   </view>
   <view class="detail">
-    舞剧最初专指以欧洲古典舞蹈为主要表现手段，综合音乐和哑剧、舞台美术、文学于一体，用以表现一个故事或一段情节的戏剧艺术，称古典芭蕾（或古典舞剧）。二十世纪出现了现代舞以后，以现代舞结合古典舞蹈技术为主要表现手段来表现故事内容或情节的称现代芭蕾。</view>
+   {{info.introduction}}</view>
 </view>
 
 <!-- 评论 -->

@@ -1,3 +1,6 @@
+//index.js
+//获取应用实例
+const app = getApp()
 // pages/playedDetail/index.js
 Page({
 
@@ -5,10 +8,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isShow: false
+    isShow: false,
+    info:{},
+    id:'',
+    from:''
   },
   onPageScroll: function (e) {
-    console.log(e);//{scrollTop:99}
     if (e.scrollTop >= 210) {
       this.setData({
         isShow: true
@@ -24,11 +29,25 @@ Page({
       url: '/pages/createSeek/index',
     })
   },
+  // 预约
+  toAppointment(){
+    wx.navigateTo({
+      url: `/pages/playsDetail/index?id=${this.data.id}`,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if(options.from){
+      this.setData({
+        from: options.from
+      })
+    }
+    this.setData({
+      id: options.id
+    })
+    this.getDetails();
   },
 
   /**
@@ -44,7 +63,20 @@ Page({
   onShow: function () {
 
   },
-
+  // 获取详情
+  getDetails() {
+    let params = {
+      script_id: this.data.id
+    }
+    app.http('getScriptInfo', params)
+      .then(value => {
+        if (value.code == 200) {
+          this.setData({
+            info: value.data.info
+          })
+        }
+      })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -56,7 +88,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    
   },
 
   /**
@@ -72,7 +104,6 @@ Page({
   onReachBottom: function () {
 
   },
-
   /**
    * 用户点击右上角分享
    */

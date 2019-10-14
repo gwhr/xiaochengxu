@@ -23,7 +23,7 @@ Component({
     toDetail(e) {
       let id = e.currentTarget.dataset.id;
       wx.navigateTo({
-        url: `/pages/playsDetail/index?id=${id}`,
+        url: `/pages/playedDetail/index?id=${id}&from=1`,
       })
     }
   }
