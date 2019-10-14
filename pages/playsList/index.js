@@ -8,9 +8,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    playListTitle: '全部剧本', //title
     indexs:0,
     navList:['全部','独家','城限','盒装','预售'],
     path:'',
+    comfrom: '',
     pageNumber:1,
     pageSize:6,
     type:0,
@@ -23,10 +25,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.setData({
-    //   path: options.path
-    // })
+    this.setData({
+      path: options.path ? options.path : '',
+      comfrom: options.comfrom ? options.comfrom : ''
+    })
+    // type: 3 从穿件野区-选择剧情跳转来
     console.log(options)
+    if (options.path == 'wantSeek') {
+      // 修改标题
+      this.setData({
+        playListTitle: '请选择剧本'
+      })
+    }
     if (options.type == 2){
       this.setData({
         searchParams: options
@@ -103,15 +113,22 @@ Page({
     // }
   },
   //剧本详情
-  toDetail(){
+  toDetail(e){
     if (this.data.path == '' || this.data.path == null) {
       wx.navigateTo({
         url: '/pages/playsDetail/index',
       })
     } else {
-      wx.navigateTo({
-        url: '/pages/'+ this.data.path + '/index',
-      })
+      if (this.data.comfrom == '') {
+        wx.navigateTo({
+          url: '/pages/' + this.data.path + '/index',
+        })
+      } else {
+        // 从创建打野来, 进入详情页 不显示差几个人
+        wx.navigateTo({
+          url: '/pages/' + this.data.path + '/index?comfrom=' + this.data.comfrom + '&id=' + e.currentTarget.dataset.id,
+        })
+      }
     }
     
   },
