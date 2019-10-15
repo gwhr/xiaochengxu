@@ -232,6 +232,13 @@ page {
   float:left;
   font-size:30rpx;
 }
+.createSeekLi .createSeekLi_time{
+  float:right;
+  /* width:13rpx; */
+  padding-left:20rpx;
+  height:136rpx;
+  line-height: 136rpx;
+}
 .createSeekLi .createSeekLi_img{
   float:right;
   width:13rpx;

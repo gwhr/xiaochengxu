@@ -103,10 +103,11 @@ Page({
     // }
   },
   //剧本详情
-  toDetail(){
+  toDetail(e){
+    let id = e.currentTarget.dataset.id;
     if (this.data.path == '' || this.data.path == null) {
       wx.navigateTo({
-        url: '/pages/playsDetail/index',
+        url: `/pages/playedDetail/index?id=${id}&from=1`,
       })
     } else {
       wx.navigateTo({

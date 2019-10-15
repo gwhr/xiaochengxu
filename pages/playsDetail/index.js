@@ -9,7 +9,9 @@ Page({
   data: {
     isShow:false,
     id:'',
-    info:{}
+    info:{},
+    region:[],
+    time:''
   },
   onPageScroll: function (e) {
     console.log(e);//{scrollTop:99}
@@ -32,6 +34,18 @@ Page({
     })
     console.log(options)
     this.getDetails();
+  },
+  // 地区插件
+  bindRegionChange: function (e) {
+    this.setData({
+      region: e.detail.value
+    })
+  },
+  // 时间插件
+  bindTimeChange: function (e) {
+    this.setData({
+      time: e.detail.value
+    })
   },
   // 获取详情
   getDetails(){

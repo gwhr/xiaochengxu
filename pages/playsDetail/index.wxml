@@ -43,9 +43,13 @@
     <view class="subscribe_choice_img">
       <image src="../../images/jiantou.png"></image>
     </view>
-    <view class="subscribe_choice_address">
-      选择地址
+    <view class="subscribe_choice_address" >
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" >
+        <view wx:if="{{region.length == 0}}">选择地址</view>
+        <view wx:else>{{region[0]}}{{region[1]}}{{region[2]}}</view>
+      </picker>
     </view>
+    
   </view>
 
   <!-- subscribe_address >> synopsis-->
@@ -75,9 +79,17 @@
   <view class="createSeekUl">
     <view class="createSeekLi">
       <view class="createSeekLi_text">预约日期</view>
-      <view class="createSeekLi_img">
-        <image src="../../images/jiantou.png"></image>
+      <view class="createSeekLi_time">
+        <picker mode="date" bindchange="bindTimeChange" value="{{time}}" >
+        <view wx:if="{{time}}">
+            {{time}}
+        </view>
+            <view class="createSeekLi_img" wx:else>
+              <image src="../../images/jiantou.png"></image>
+            </view>
+        </picker>
       </view>
+      
     </view>
     <view class="createSeekLi">
       <view class="createSeekLi_text">预约时间段</view>

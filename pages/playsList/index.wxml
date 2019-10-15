@@ -18,7 +18,7 @@
     <view wx:for="{{navList}}" bindtap='chooseNav' id="{{index}}" data-indexs="{{index}}" wx:key class="nav-item{{index == indexs?' active':''}}">{{item}}</view>
   </view>
   <view class="plays-list">
-    <view class="plays-list-item" bindtap='toDetail' wx:for="{{dataList}}" wx:key>
+    <view class="plays-list-item" bindtap='toDetail' wx:for="{{dataList}}" wx:key data-id="{{item.id}}">
       <view class="plays-cover">
          <image src="{{item.thumb}}"></image>
         <view class="cover_point">{{item.score}} <text>分</text></view>
