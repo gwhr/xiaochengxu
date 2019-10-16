@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/getUserinfo/getUserinfo",
     "pages/index/index",
     "pages/playsList/index",
     "pages/playedDetail/index",

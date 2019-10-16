@@ -1,7 +1,10 @@
 //app.js
 import http from './utils/api.js'
+import { formatTime, timestamp } from './utils/util.js'
 App({
   http,
+  formatTime,
+  timestamp, // 日期转时间戳
   onLaunch: function() {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []

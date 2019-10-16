@@ -9,7 +9,7 @@
 <!-- content -->
 <view class="cu-list menu sm-border">
   <view class="cu-item arrow">
-    <view class="content">
+    <view class="content" bindtap='toPlaysList'>
       <text class="text-darkGray">选择剧本</text>
     </view>
   </view>
@@ -28,11 +28,11 @@
       <text class="text-darkGray">选择时间段</text>
     </view>
   </view>
-  <view class="cu-item arrow">
+  <!-- <view class="cu-item arrow">
     <view class="content">
       <text class="text-darkGray">总人数</text>
     </view>
-  </view>
+  </view> -->
 </view>
 
 <!-- addSeekBottom -->

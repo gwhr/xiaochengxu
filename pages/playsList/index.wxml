@@ -1,7 +1,7 @@
 <!--pages/playsList/index.wxml-->
 <cu-custom bgColor="bg-purple-gradual" isBack="{{true}}">
   <view slot="backText">返回</view>
-  <view slot="content">全部剧本</view>
+  <view slot="content">{{ playListTitle }}</view>
 </cu-custom>
 <view class="container">
   <view class="search_box">
