@@ -44,9 +44,9 @@
       <image src="../../images/jiantou.png"></image>
     </view>
     <view class="subscribe_choice_address" >
-      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" >
-        <view wx:if="{{region.length == 0}}">选择地址</view>
-        <view wx:else>{{region[0]}}{{region[1]}}{{region[2]}}</view>
+      <picker bindchange="bindRegionChange" value="{{address_index}}" range="{{address_list}}" range-key="{{'name'}}">
+        <view wx:if="{{address_index == -1}}">选择地址</view>
+        <view wx:else>{{address_list[address_index].name}}</view>
       </picker>
     </view>
     
@@ -80,13 +80,13 @@
     <view class="createSeekLi">
       <view class="createSeekLi_text">预约日期</view>
       <view class="createSeekLi_time">
-        <picker mode="date" bindchange="bindTimeChange" value="{{time}}" >
-        <view wx:if="{{time}}">
-            {{time}}
+        <picker bindchange="bindTimeChange" value="{{appointment_date_index}}" range="{{appointment_date_list}}" range-key="{{'name'}}">
+        <view wx:if="{{appointment_date_index !== -1}}">
+            {{appointment_date_list[appointment_date_index].name}}
         </view>
-            <view class="createSeekLi_img" wx:else>
-              <image src="../../images/jiantou.png"></image>
-            </view>
+        <view class="createSeekLi_img" wx:else>
+          <image src="../../images/jiantou.png"></image>
+        </view>
         </picker>
       </view>
       

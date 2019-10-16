@@ -9,9 +9,11 @@ Page({
   data: {
     isShow:false,
     id:'',
-    info:{},
-    region:[],
-    time:''
+    info:{},//详情页面数据
+    address_list: [],//选择地址
+    address_index:-1, //地址选择器的从第几个开始的下标(ps:默认从-1)
+    appointment_date_list:[], //预约日期
+    appointment_date_index:-1,//预约日期的从第几个开始的下标(ps:默认从-1)
   },
   onPageScroll: function (e) {
     console.log(e);//{scrollTop:99}
@@ -38,13 +40,13 @@ Page({
   // 地区插件
   bindRegionChange: function (e) {
     this.setData({
-      region: e.detail.value
+      address_index: e.detail.value,
     })
   },
   // 时间插件
   bindTimeChange: function (e) {
     this.setData({
-      time: e.detail.value
+      appointment_date_index: e.detail.value
     })
   },
   // 获取详情
@@ -57,6 +59,16 @@ Page({
       if(value.code == 200){
         this.setData({
           info:value.data.info
+        })
+      }
+    })
+  //获取时间&地址
+    app.http('getOptionsInfo')
+    .then(res=>{
+      if (res.code == 200){
+        this.setData({
+          address_list: res.data.storeList, //选择地址
+          appointment_date_list:res.data.timelist //预约时间
         })
       }
     })
