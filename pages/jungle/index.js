@@ -32,7 +32,8 @@ Page({
   //创建打野
   toCreate(){
     wx.navigateTo({
-      url: '/pages/createSeek/index',
+      // url: '/pages/createSeek/index', //焦哥2019/10/17日将这个页面pass掉
+      url: '/pages/playsList/index?path=wantSeek&comfrom=createSeek',
     })
   },
   // 打野列表
