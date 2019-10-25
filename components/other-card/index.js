@@ -40,6 +40,13 @@ Component({
    */
   methods: {
     toJion(e) {
+      if (wx.getStorageSync('token') == '' || wx.getStorageSync('token') == undefined) {
+        wx.showToast({
+          title: '请登录后重试',
+          icon: 'none'
+        })
+        return
+      }
       wx.navigateTo({
         url: '/pages/joinSeek/index?game_id=' + e.target.dataset.id,
       })

@@ -19,6 +19,9 @@
   font-family: 'FZLTZHK--GBK1-0';
   font-weight:600;
 }
+.list-item:last-child .item{
+  border: 0
+}
 .list-item .item image{
   display: inline-block;
   width: 24rpx;

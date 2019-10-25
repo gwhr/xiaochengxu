@@ -19,7 +19,7 @@
     <view>
       {{info.downpayment}}元预约（全款{{info.price}}元）
       <view class="subscribe_Top_img">
-        <image src="../../images/rigth-arrow.png"></image>
+        <image src="{{ info.thumb }}"></image>
       </view>
     </view>
   </view>
@@ -31,7 +31,7 @@
     <text>{{info.name}}</text>
   </view>
   <view class="addSeekTop_score">
-    <text>8.9<text>分</text></text>高手进阶·{{info.numbers}}人本
+    <text>{{info.score}}<text>分</text></text>高手进阶·{{info.numbers}}人本
   </view>
   <view class="addSeekTop_bottom">
     <view class="addSeekTop_bottom_left">
@@ -69,7 +69,7 @@
       <view class="top">
         <view class="user">
           <image src="../../images/logo.png"></image>
-          <text class="name">五千多</text>
+          <text class="name">狗币玮</text>
         </view>
         <view class="time">201-08-15</view>
       </view>

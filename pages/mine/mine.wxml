@@ -4,15 +4,19 @@
 </cu-custom>
 <view class="user-info">
   <view class="user-info-img">
-    <view class="user-info-name" bindtap='toUserInfo'>
-      <view class="img">
-        <image src="../../images/mine/user.png"></image>
+      <!-- <view class="user-info-name" bindtap='toUserInfo'> -->
+      <view class="user-info-name">
+        <view class="img">
+          <image wx:if="{{!userInfo}}" src="../../images/mine/user.png"></image>
+          <image wx:if="{{userInfo}}" src="{{userInfo.userInfo.avatar}}"></image>
+        </view>
+        <view class="name">
+          <view class="t" wx:if="{{userInfo}}">{{userInfo.userInfo.nickname}}</view>
+          <view class="t" wx:if="{{!userInfo}}">点击登录</view>
+          <text>高级会员</text>
+        </view>
+        <button open-type="getUserInfo" class="user-btn" bindgetuserinfo="shouquan"></button>
       </view>
-      <view class="name">
-        <view class="t">Juan</view>
-        <text>高级会员</text>
-      </view>
-    </view>
     <view class="user-info-phone">绑定手机号</view>
   </view>
   <view class="user-purse">
@@ -23,21 +27,27 @@
   </view>
   <view class="user-item">
     <view class="items" bindtap='toOrder'>
-      <view class="number">18</view>
+      <view class="number" wx:if="{{!userInfo}}">0</view>
+      <view class="number">{{userInfo.appCount}}</view>
       <view class="title">已预约</view>
     </view>
     <view class="items" bindtap='toPlayed'>
-      <view class="number">68</view>
+    <view class="number" wx:if="{{!userInfo}}">0</view>
+      <view class="number">{{userInfo.playCount}}</view>
       <view class="title">已玩过</view>
     </view>
     <view class="items" bindtap='toEstablished'>
-      <view class="number">5</view>
+    <view class="number" wx:if="{{!userInfo}}">0</view>
+      <view class="number">{{userInfo.makeCount}}</view>
       <view class="title">已创建</view>
     </view>
-    <view class="items" bindtap='toMessage'>
-      <view class="red-tag"></view>
-      <view class="number">5</view>
+    <view class="items">
+    <!-- <view class="items" bindtap='toMessage'> -->
+      <!-- <view class="red-tag"></view> -->
+      <view class="number" wx:if="{{!userInfo}}">0</view>
+      <view class="number">{{userInfo.messageCount}}</view>
       <view class="title">消息</view>
+      <button class="message-btn" open-type="contact" bindcontact="handleContact"></button>
     </view>
   </view>
 </view>

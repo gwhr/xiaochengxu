@@ -4,7 +4,7 @@
 <view class="ad-card"><image src="../../images/logo.png"></image><text class="txt">蛙探玩家内测已经开始啦！赶快来报名加入吧！</text><text class="cuIcon-right lg text-gray"></text></view>
 <swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" indicator-color="#e1d7f0" indicator-active-color="#9000ff">
   <swiper-item wx:for="{{swiperList}}" wx:key>
-    <view class="swiper-item">
+    <view class="swiper-item" data-id="{{item.id}}" bindtap="toDetail">
       <image src="{{item.thumb}}" mode="aspectFill" ></image>
     </view>
   </swiper-item>

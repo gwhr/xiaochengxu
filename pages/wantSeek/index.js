@@ -16,16 +16,52 @@ Page({
     timeObject: [], // 时间段信息
     timeIndex: 0,
     script_id: 0,
+    userToken:''
   },
   toCreated() {
     // wx.navigateTo({
     //   url: '/pages/createSeek/index',
     // })
+    if (wx.getStorageSync('token') == '' || wx.getStorageSync('token') == undefined) {
+      wx.showToast({
+        title: '请登录后重试',
+        icon:'none'
+      })
+      return
+    }
+    let parmas = {
+      userToken: wx.getStorageSync('token'),
+      script_id: this.data.script_id - 0,
+      store_id: this.data.storeObject[this.data.storeIndex].id - 0,
+      time_id: this.data.timeObject[this.data.timeIndex].id - 0,
+      // number_id : 1,
+      start_date: app.timestamp(this.data.date) / 1000 + '',
+      // userToken: this.data.userToken
+    }
+    app.http('makeGame', parmas).then(res => {
+      console.log(res)
+      if (res.code == 200) {
+        // 提示数据 + 成功
+        wx.navigateTo({
+          // url: '/pages/orderSuccess/index',
+          url: '/pages/jungle/index',
+        })
+      } else {
+        // 提示原因
+        wx.showToast({
+          title: res.message,
+          icon:'none'
+        })
+      }
+    })
+
+  },
+  jionDy(){
     let parmas = {
       script_id: this.data.script_id - 0,
       address_id: this.data.storeObject[this.data.storeIndex].id - 0,
       time_id: this.data.timeObject[this.data.timeIndex].id - 0,
-      number_id : 1,
+      // number_id : 1,
       start_date: app.timestamp(this.data.date) - 0
     }
     app.http('makeGame', parmas).then(res => {
@@ -36,7 +72,6 @@ Page({
         // 提示原因
       }
     })
-
   },
   /**
    * 生命周期函数--监听页面加载
@@ -49,8 +84,15 @@ Page({
         showLack: false
       })
     }
+    // 从加入打野-选择剧本来
+    // if (options.comfrom == 'joinSeet') {
+    //   this.setData({
+    //     showLack: true
+    //   })
+    // }
     this.setData({
-      script_id: options.id
+      script_id: options.id,
+      userToken:app.globalData.userToken
     })
   },
 

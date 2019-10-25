@@ -2,4 +2,4 @@
 <cu-custom bgColor="bg-purple-gradual" isBack="{{true}}">
   <view slot="content">我的预约</view>
 </cu-custom>
-<other-card-edit txt="取消预约" path="orderDetail"></other-card-edit>
+<other-card-edit data="{{list}}" txt="取消预约" path="orderDetail"></other-card-edit>

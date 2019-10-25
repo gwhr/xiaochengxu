@@ -1,30 +1,49 @@
 // pages/adress/index.js
+let app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isShow:0
+    showId:'',
+    list:[]
   },
   choose(e) {
     console.log(e.currentTarget.dataset.id)
-    if (e.currentTarget.dataset.id != this.data.isShow) {
+    if (e.currentTarget.dataset.id != this.data.showId) {
       this.setData({
-        isShow: e.currentTarget.dataset.id
+        showId: e.currentTarget.dataset.id
       })
     } else {
       this.setData({
-        isShow: 0
+        showId: ''
       })
     }
-    
+  },
+  //获取组织地址
+  getList() {
+    app.http('getStoreInfo')
+      .then(res => {
+        if (res.code == 200) {
+          console.log(res)
+          this.setData({
+            list:res.data.list
+          })
+        } else {
+          wx.showToast({
+            title: res.data.message,
+            icon: 'none'
+          })
+        }
+
+      })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getList()
   },
 
   /**

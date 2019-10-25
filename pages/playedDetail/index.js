@@ -31,6 +31,13 @@ Page({
   },
   // 预约
   toAppointment(){
+    if (wx.getStorageSync('token') == '' || wx.getStorageSync('token') == undefined) {
+      wx.showToast({
+        title: '请登录后重试',
+        icon: 'none'
+      })
+      return
+    }
     wx.navigateTo({
       url: `/pages/playsDetail/index?id=${this.data.id}`,
     })

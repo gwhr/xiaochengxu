@@ -1,11 +1,12 @@
 // pages/established/index.js
+let app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list:[]
   },
 
   /**
@@ -26,9 +27,38 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getList()
   },
-
+  getList() {
+    if (wx.getStorageSync('token') == '' || wx.getStorageSync('token') == undefined) {
+      wx.showToast({
+        title: '请登录后重试',
+        icon: 'none'
+      })
+      return
+    }
+    let params = {
+      userToken: wx.getStorageSync('token'),
+      type: 1 // 1已创建(打野),2已预约
+    }
+    app.http('getMyGameList', params)
+      .then(value => {
+        if (value.code == 200) {
+          console.log(value)
+          value.data.list.map(item => {
+            item.created_at = item.created_at.substring(0, 11)
+          })
+          this.setData({
+            list: value.data.list
+          })
+        } else {
+          wx.showToast({
+            title: value.message,
+            icon: 'none'
+          })
+        }
+      })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

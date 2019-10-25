@@ -1,18 +1,23 @@
 // pages/playsDetail/index.js
+let app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    game_id: '',
+    detailData: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
+    this.setData({
+      game_id: options.id ? options.id : ''
+    })
   },
 
   /**
@@ -26,7 +31,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.detailData(this.data.game_id)
   },
 
   /**
@@ -62,5 +67,23 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  /**
+   * 获取详情信息
+   */
+  detailData: function (game_id) {
+    let params = {
+      userToken: wx.getStorageSync('token'),
+      game_id
+    }
+    app.http('getMyGameInfo', params).then(res => {
+      console.log(res)
+      let detailData = res.data.gameInfo
+      detailData.start_date = app.formatTime(new Date(detailData.start_date * 1000), 2)
+      this.setData({
+        detailData
+      })
+    })
   }
 })

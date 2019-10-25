@@ -5,6 +5,7 @@
 <!-- addSeekButton -->
 <view class="addSeekButton">
   <view class="addSeekButton_btn" bindtap='toCreated'>创建野区</view>
+  <!-- <view class="addSeekButton_btn" bindtap='jionDy'>加入打野</view> -->
 </view>
 
 <!-- addSeekTop -->

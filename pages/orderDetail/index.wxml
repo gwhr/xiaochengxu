@@ -5,23 +5,23 @@
 <!-- addSeekTop -->
 <view class="addSeekTop">
   <view class="addSeekTop_img">
-    <image src="../../images/addSeek.png"></image>
+    <image src="{{ detailData.script.thumb }}"></image>
   </view>
   <view class="addSeekTop_title">
-    <text>独家</text>
-    舞蹈家的致命芭蕾
+    <text>{{ detailData.script.category_name }}</text>
+    {{ detailData.script.name }}
   </view>
   <view class="addSeekTop_score">
-    <text>8.9<text>分</text></text>新手·7/8/9人进阶对抗
+    <text>{{ detailData.script.score }}<text>分</text></text>{{ detailData.script.difficulty }} · {{ detailData.numbers }} 人进阶对抗
   </view>
   <view class="addSeekTop_bottom">
     <view class="addSeekTop_bottom_left">
         <view>推理系数:</view>
-        <view class="addSeekTop_bottom_starImg"><image src="../../images/addSeek_star.png"></image></view>
+        <view class="addSeekTop_bottom_starImg" wx:for="{{ detailData.script.ratio }}" wx:key><image src="../../images/addSeek_star.png"></image></view>
       </view>
     <view class="addSeekTop_bottom_right">
         <view>剧情:</view>
-         <view class="addSeekTop_bottom_starImg"><image src="../../images/addSeek_star.png"></image></view> 
+         <view class="addSeekTop_bottom_starImg" wx:for="{{ detailData.script.star }}" wx:key><image src="../../images/addSeek_star.png"></image></view> 
         </view>
   </view>
 </view>
@@ -29,12 +29,12 @@
 <view class="reservationDetails_address">
   <view></view>
   <view>地址：</view>
-  <view>北京-朝阳区-东大桥</view>
+  <view>{{ detailData.store_name }}</view>
 </view>
 
 <view class="reservationDetails_address">
   <view></view>
   <view>时间：</view>
-  <view>2019-09-08</view>
-  <view>13：00-15:00</view>
+  <view>{{ detailData.start_date + " " + detailData.time_sort }}</view>
+  <!-- <view>13：00-15:00</view> -->
 </view>

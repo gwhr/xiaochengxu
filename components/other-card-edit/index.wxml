@@ -1,23 +1,23 @@
 <!--components/other-card-edit/index.wxml-->
 <view class="seekUl">
-  <view class="seekLi {{modalName?'move':''}}" wx:for="{{seekList}}" wx:for-item="seekListItem" wx:key bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd">
-    <view class="seekLi_top" bindtap='toDetail'>
+  <view class="seekLi {{modalName?'move':''}}" wx:for="{{data}}" wx:for-item="seekListItem" wx:key bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd">
+    <view class="seekLi_top" bindtap='toDetail' data-id="{{ seekListItem.id }}">
       <view class="seekLi_top_img">
-        <image src="{{seekListItem.imgSrc}}"></image>
+        <image src="{{seekListItem.script.thumb}}"></image>
       </view>
       <view class="seekLi_top_right">
-        <view class="title">{{seekListItem.title}}</view>
+        <view class="title">{{seekListItem.script.name}}</view>
         <view class="explain">
-          <text class="tag">{{seekListItem.explain}}</text>{{seekListItem.explain_changeTxt}}</view>
-        <view class="address">{{seekListItem.address}}</view>
+          <text class="tag">{{seekListItem.script.category_name}}</text>{{seekListItem.script.difficulty}}</view>
+        <view class="address">{{seekListItem.store_name}}</view>
         <view class="time">
-          <text class="time_txtStyle">{{seekListItem.timeDate}}</text>
-          <text>{{seekListItem.timeTime}}</text>
+          <text class="time_txtStyle">{{seekListItem.created_at}}</text>
+          <text>{{seekListItem.time_sort}}</text>
         </view>
       </view>
     </view>
     <view class="seekLi_bottom">
-      <view class="seekLi_bottom_left">房间当前{{seekListItem.peopleNumber}}人</view>
+      <view class="seekLi_bottom_left">房间当前{{seekListItem.now_numbers}}人</view>
       <view class="seekLi_bottom_right">邀请好友</view>
     </view>
     <view class="delete">{{txt}}</view>

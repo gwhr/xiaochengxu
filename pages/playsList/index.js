@@ -18,7 +18,8 @@ Page({
     type:0,
     keywords:'',
     dataList:[],
-    searchParams:{}
+    searchParams:{},
+    apiType:1,    //获取什么借口
   },
 
   /**
@@ -41,13 +42,14 @@ Page({
       this.setData({
         searchParams: options
       })
+      this.apiType = 2;
       this.getSearchList();
       return
     }
     this.getAllList();
   },
   // 获取全部剧本
-  getAllList(){
+  getAllList(type=1){
     wx.hideToast();
     let params = {
       pageNumber:this.data.pageNumber,
@@ -58,9 +60,16 @@ Page({
     app.http('getAllList',params)
     .then(value=>{
       if(value.code == 200){
-        this.setData({
-          dataList: this.data.dataList.concat(value.data.list)
-        })
+        if(type == 1){
+          this.setData({
+            dataList: value.data.list
+          })
+        }else{
+          this.setData({
+            dataList: this.data.dataList.concat(value.data.list)
+          })
+        }
+        
       }else{
         this.setData({
           dataList: []
@@ -103,7 +112,10 @@ Page({
   //搜索剧本
   searchPlays(e){
     this.setData({
-      keywords: e.detail.value
+      keywords: e.detail.value,
+      pageNumber: 1,
+      pageSize: 6,
+      apiType:1
     })
     this.getAllList();
     // if(e.detail.value != ''){
@@ -192,7 +204,12 @@ Page({
     this.setData({
       pageNumber: (this.data.pageNumber + 1)
     })
-    this.getAllList();
+    if (this.data.apiType == 2){
+      this.getSearchList()
+    }else{
+      this.getAllList(2);
+    }
+    
   },
 
   /**

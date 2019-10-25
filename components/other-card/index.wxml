@@ -21,7 +21,7 @@
       <view class="seekLi_bottom_right" bindtap='toJion'>加入打野</view>
     </view>
   </view> -->
-  <view class="seekLi" wx:for="{{listData}}" wx:for-item="listDataItem" wx:key>
+  <view class="seekLi" wx:for="{{listData}}" wx:for-item="listDataItem" wx:key bindtap='toJion' data-id="{{listDataItem.id}}">
     <view class="seekLi_top">
       <view class="seekLi_top_img">
         <image src="{{listDataItem.script.thumb}}"></image>
@@ -30,7 +30,7 @@
         <view class="title">{{listDataItem.script.name}}</view>
         <view class="explain">
           <text class="tag">盒装</text>{{listDataItem.numbers}}人进阶对抗</view>
-        <view class="address">地址: {{listDataItem.start_date}}</view>
+        <view class="address">地址: {{listDataItem.store.name}}</view>
         <view class="time">
           <!-- <text class="time_txtStyle">{{listDataItem.script.name}}</text> -->
           <text>{{listDataItem.created_at}}</text>

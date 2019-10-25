@@ -30,24 +30,17 @@ Page({
   },
   // 加入打野
   addToGame(e) {
-    let userToken = e.target.dataset.userToken || ''
-    if (userToken === '') {
+    if (wx.getStorageSync('token') == '' || wx.getStorageSync('token') == undefined) {
       wx.showToast({
-        title: '成功',
-        icon: 'success',
-        duration: 2000,
-        complete: function () {
-          wx.navigateTo({
-            url: '/pages/playsList/index',
-          })
-        }
+        title: '请登录后重试',
+        icon: 'none'
       })
       return
     } 
     let game_id = e.target.dataset.game_id
     app.http('addToGame', {
       game_id,
-      userToken
+      userToken: wx.getStorageSync('token')
     }).then(res => {
       console.log(res)
     })

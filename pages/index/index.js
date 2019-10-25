@@ -20,6 +20,12 @@ Page({
     this.getList()
     this.getAdvertList()
   },
+  toDetail(e) {
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `/pages/playedDetail/index?id=${id}&from=1`,
+    })
+  },
   // 获取列表数据
   getList() {
     let params = {

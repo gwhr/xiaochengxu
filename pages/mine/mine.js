@@ -1,18 +1,109 @@
 // pages/mine/mine.js
+let app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    userInfo:undefined,
+    code:''
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      code:app.globalData.code
+    })
+    this.getUserinfos()
+  },
+  //授权
+  /**
+  * 授权登录
+  */
+  shouquan: function (res2) { //获取用户信息
+    var that = this;
+    console.log(res2)
+    if (!app.globalData.userInfo) { //判断用户信息是否存在
+      app.globalData.userInfo = res2.detail.userInfo;
+      that.setData({
+        userInfo: res2.detail.userInfo,
+      })
+      //一定要把加密串转成URI编码
+      var encryptedData = res2.detail.encryptedData;
+      var iv = res2.detail.iv;
+      wx.getSetting({ //判断用户是否已授权
+        success(res) {
+          if (res.authSetting['scope.userInfo']) {
+            console.log('授权')
+            that.LoginTo(app.globalData.code, iv, encryptedData);
+          } else { //未授权登录失败，打开设置授权窗口
+            wx.showModal({
+              title: '提示',
+              content: '登录失败，请授权用户信息后退出重试',
+              success: res => {
+                if (res.confirm) {
+                  wx.openSetting({
+                    success(res) {
+                    }
+                  })
+                }
+              }
+            })
+          }
+        }
+      })
+    } else {
+      return;
+    }
+  },
+  //登录自己服务器
+  LoginTo(code, iv, encryptedData) {
+    let params = {
+      code: code,
+      iv: iv,
+      encryptedData: encryptedData,
+    }
+    app.http('miniLogin', params)
+      .then(res => {
+        if (res.code == 200) {
+          console.log(res)
+          wx.setStorageSync('token', res.data.userToken)
+          app.globalData.userToken = res.data.userToken
+          // app.globalData.userId = res.data.data.userInfo.id
+          // app.globalData.userInfo = res.data.data.userInfo
+          // app.globalData.userInfo = res
+          this.getUserinfos()
+        } else {
+          wx.showToast({
+            title: '登录失败，' + res.data.message,
+            icon: 'none'
+          })
+        }
 
+      })
+  },
+  getUserinfos(){
+    let userToken = wx.getStorageSync('token')
+    let params = {
+      userToken: userToken
+    }
+    app.http('getUserInfo', params)
+      .then(res => {
+        if (res.code == 200) {
+          console.log(res)
+          app.globalData.userInfo = res.data
+          this.setData({
+            userInfo: res.data
+          })
+        } else {
+          wx.showToast({
+            title: '请登录！',
+            icon: 'none'
+          })
+        }
+      })
   },
   // 版本信息
   showVersion(){
@@ -96,7 +187,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**

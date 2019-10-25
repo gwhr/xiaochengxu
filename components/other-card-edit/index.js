@@ -9,6 +9,9 @@ Component({
     },
     path:{
       type: String
+    },
+    data:{
+      type:Array
     }
   },
 
@@ -33,9 +36,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    toDetail() {
+    toDetail(e) {
+      // 详情页查询所需id
+      let id = e.currentTarget.dataset.id || ''
+      // 详情页掉哪个接口
+      let detail_IP = e.currentTarget.dataset.detail_IP || ''
+      console.log(id)
       wx.navigateTo({
-        url: '/pages/'+ this.data.path + '/index',
+        url: '/pages/' + this.data.path + '/index?id=' + id + '&detail_IP=' + detail_IP,
       })
     },
     // ListTouch触摸开始

@@ -2,4 +2,4 @@
 <cu-custom bgColor="bg-purple-gradual" isBack="{{true}}">
   <view slot="content">已玩过</view>
 </cu-custom>
-<other-card-edit txt="删除" path="playedDetail"></other-card-edit>
+<other-card-edit data="{{list}}" txt="删除" path="playedDetail"></other-card-edit>
